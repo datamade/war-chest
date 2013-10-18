@@ -59,6 +59,7 @@ class Report(db.Model):
     funds_end = db.Column(db.Float)
     receipts = db.Column(db.Float)
     expenditures = db.Column(db.Float)
+    detail_url = db.Column(db.String(255))
     committee_id = db.Column(db.Integer, db.ForeignKey('committee.id'), index=True)
 
     def __repr__(self):
