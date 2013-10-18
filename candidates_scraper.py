@@ -165,7 +165,7 @@ def candidate_pages() :
             yield election_id, url, response 
         else :
             blank_pages += 1
-            if blank_pages > 10 :
+            if blank_pages > 50 :
                 last_candidate = True
 
         election_id += 1
