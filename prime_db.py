@@ -1,16 +1,6 @@
 from app import db, Candidate, Committee, ElectionResult
 import json
 
-def get_or_create(model, **kwargs):
-    instance = db.session.query(model).filter_by(**kwargs).first()
-    if instance:
-        return instance, False
-    else:
-        instance = model(**kwargs)
-        db.session.add(instance)
-        db.session.commit()
-        return instance, True
-
 def saveit(alderman):
     cand_data = {
         'address': alderman['Address'],
@@ -20,22 +10,25 @@ def saveit(alderman):
         'url': alderman['url']
     }
     cand = Candidate(**cand_data)
+    comms = []
+    for committee in alderman['committees']:
+        c = Committee.query.get(committee['Committee ID'])
+        if c:
+            comms.append(c)
+        else:
+            comm_data = {
+                'id': committee['Committee ID'],
+                'name': committee['Committee Name'],
+                'address': committee['Address'],
+                'local_id': committee.get('Local ID'),
+                'state_id': committee.get('State ID'),
+                'status': committee['Status'],
+                'url': committee['url'],
+            }
+            comms.append(Committee(**comm_data))
+    cand.committees = comms
     db.session.add(cand)
     db.session.commit()
-    for committee in alderman['committees']:
-        comm_data = {
-            'id': committee['Committee ID'],
-            'name': committee['Committee Name'],
-            'address': committee['Address'],
-            'local_id': committee.get('Local ID'),
-            'state_id': committee.get('State ID'),
-            'status': committee['Status'],
-            'url': committee['url'],
-        }
-        comm, created = get_or_create(Committee, **comm_data)
-        comm.candidate = cand
-        db.session.add(comm)
-        db.session.commit()
     for result in alderman['results']:
         res_data = {
             'type': result['Election Type'],
@@ -47,7 +40,7 @@ def saveit(alderman):
         }
         res = ElectionResult(**res_data)
         db.session.add(res)
-        db.session.commit()
+    db.session.commit()
     return None
 
 if __name__ == '__main__':

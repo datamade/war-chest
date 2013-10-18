@@ -1,6 +1,7 @@
 from flask import Flask, request, make_response
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import func
+from sqlalchemy.ext.declarative import declarative_base
 import os
 from datetime import date
 
@@ -10,6 +11,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = CONN_STRING
 
 db = SQLAlchemy(app)
 
+cand_comm = db.Table('cand_comm',
+   db.Column('candidate_id', db.Integer, db.ForeignKey('candidate.id')),
+   db.Column('committee_id', db.Integer, db.ForeignKey('committee.id')),
+)
+
 class Candidate(db.Model):
     __tablename__ = 'candidate'
     id = db.Column(db.Integer, primary_key=True)
@@ -17,7 +23,7 @@ class Candidate(db.Model):
     address = db.Column(db.String(255), index=True)
     party = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
-    committees = db.relationship('Committee', backref='candidate', lazy='dynamic')
+    committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')
 
     def __repr__(self):
@@ -35,7 +41,6 @@ class Committee(db.Model):
     state_id = db.Column(db.Integer, index=True)
     status = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
-    candidate_id = db.Column(db.Integer, db.ForeignKey('candidate.id'), index=True)
     reports = db.relationship('Report', backref='committee', lazy='dynamic')
 
     def __repr__(self):
