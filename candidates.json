@@ -1,0 +1,216 @@
+[
+    {
+        "Address": "",
+        "Candidate ID": 1,
+        "Name": "Howard W Carroll",
+        "Office": "State Senator 1st District",
+        "Party": "Democratic",
+        "committees": [
+            {
+                "Address": "7250 N Cicero Avenue\nLincolnwood, IL 60712",
+                "Committee ID": "32",
+                "Committee Name": "Howard W Carroll Campaign Fund",
+                "State ID": "244",
+                "Status": "Final",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=32"
+            },
+            {
+                "Address": "7250 N Cicero Avenue\nLincolnwood, IL 60712",
+                "Committee ID": "7759",
+                "Committee Name": "Friends Of Howard W Carroll",
+                "State ID": "5275",
+                "Status": "Final",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=7759"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=1"
+    },
+    {
+        "Address": "2800 N Lake Shore Dr\nChicago, IL 60657",
+        "Candidate ID": 2,
+        "Name": "William A Marovitz",
+        "Office": "State Senator 3rd District",
+        "Party": "Democratic",
+        "committees": [
+            {
+                "Address": "101 W Grand Ave, Ste 200\nChicago, IL 60610-4230",
+                "Committee ID": "47",
+                "Committee Name": "Citizens for Marovitz",
+                "Local ID": "3111",
+                "State ID": "420",
+                "Status": "Final",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=47"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=2"
+    },
+    {
+        "Address": "",
+        "Candidate ID": 3,
+        "Name": "William C Miceli",
+        "Office": "State Senator 1st District",
+        "Party": "Republican",
+        "committees": [
+            {
+                "Address": "5157 N Lowell Ave\nChicago, IL 60630-2612",
+                "Committee ID": "959",
+                "Committee Name": "Committee to Elect Miceli",
+                "Local ID": "607",
+                "State ID": "4280",
+                "Status": "Active",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=959"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Challenger",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Challenger",
+                "Result": "Lost"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=3"
+    },
+    {
+        "Address": ",",
+        "Candidate ID": 4,
+        "Name": "Dawn Clark Netsch",
+        "Office": "State Senator 4th District",
+        "Party": "Democratic",
+        "committees": [
+            {
+                "Address": "117 W Goethe\nChicago, IL 60610",
+                "Committee ID": "37",
+                "Committee Name": "Dawn Clark Netsch Campaign Comm",
+                "State ID": "319",
+                "Status": "Final",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=37"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=4"
+    },
+    {
+        "Address": "",
+        "Candidate ID": 5,
+        "Name": "Kent D Griffiths",
+        "Office": "State Senator 4th District",
+        "Party": "Republican",
+        "committees": [
+            {
+                "Address": "1047 W Belden\nChicago, IL 60614",
+                "Committee ID": "93",
+                "Committee Name": "Chicagoans For Griffiths",
+                "State ID": "4230",
+                "Status": "Final",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=93"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Challenger",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Challenger",
+                "Result": "Lost"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=5"
+    },
+    {
+        "Address": "5117 W Drummond Pl\nChicago, IL 60639",
+        "Candidate ID": 6,
+        "Name": "Thaddeus (Ted) Lechowicz",
+        "Office": "State Senator 6th District",
+        "Party": "Democratic",
+        "committees": [
+            {
+                "Address": "545 Somerset Ln\nNorthfield, IL 60093-1019",
+                "Committee ID": "38",
+                "Committee Name": "Citizens for Lechowicz",
+                "State ID": "333",
+                "Status": "Active",
+                "url": "http://www.elections.il.gov/CampaignDisclosure/CommitteeDetail.aspx?id=38"
+            }
+        ],
+        "results": [
+            {
+                "Election Type": "GP",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            },
+            {
+                "Election Type": "GE",
+                "Election Year": "1988",
+                "Fair Campaign": "",
+                "Inc/Chall/Open": "Incumbent",
+                "Result": "Won"
+            }
+        ],
+        "url": "http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=6"
+    }
+]

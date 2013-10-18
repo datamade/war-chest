@@ -142,8 +142,8 @@ class CandidateScraper(DotNetScraper) :
 
 s = CandidateScraper(requests_per_minute=60,
                      follow_robots=True,
-                     raise_errors=True,
-                     retry_attempts=10)
+                     raise_errors=False,
+                     retry_attempts=0)
 
 s.cache_storage = scrapelib.cache.FileCache('cache')
 s.cache_write_only = False
