@@ -1,0 +1,5 @@
+scrapelib
+lxml
+xmltodict
+Flask
+flask-sqlalchemy
