@@ -140,13 +140,6 @@ class CandidateScraper(DotNetScraper) :
         return d
 
 
-s = CandidateScraper(requests_per_minute=60,
-                     follow_robots=True,
-                     raise_errors=False,
-                     retry_attempts=0)
-
-s.cache_storage = scrapelib.cache.FileCache('cache')
-s.cache_write_only = False
 
 
 
@@ -170,44 +163,51 @@ def candidate_pages() :
 
         election_id += 1
 
-
-candidates = []
-for election_id, url, page in candidate_pages() :
-    print election_id
-    candidate = {}
-    candidate['url'] = url
-    candidate['Candidate ID'] = election_id
-    candidate.update(s.candidate_box(page))
-
-
-    candidate['results'] = []
-    candidate_results_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCandidateResults']")[0]
-    for result, _, _ in s.parseDataTable(candidate_results_table) :
-        candidate['results'].append(dict(result))
-
-    candidate['committees'] = []
-    committee_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCommitteeInformation']")[0]
-    for committee, _, _ in s.parseDataTable(committee_table) :
-        committee['url'] = committee['Committee Name']['url']
-        committee['Committee Name'] = committee['Committee Name']['label']
-        committee_ids = committee['ID'].split('\n')
-        for committee_id in committee_ids :
-            if 'State' in committee_id :
-                committee['State ID'] = committee_id.split()[-1]
-            elif 'Local' in committee_id :
-                committee['Local ID'] = committee_id.split()[-1]
-            elif 'Committee ID' in committee_id :
-                committee['Committee ID'] = committee_id.split()[-1]
-        del committee['ID']
-        candidate['committees'].append(dict(committee))
-    candidates.append(candidate)
-
-
-with open('candidates.json', 'w') as outfile :
-  json.dump(candidates, 
-            outfile, 
-            sort_keys=True, 
-            indent=4, 
-            separators=(',', ': '))
+if __name__ == '__main__':
+    s = CandidateScraper(requests_per_minute=60,
+                         follow_robots=True,
+                         raise_errors=False,
+                         retry_attempts=0)
+ 
+    s.cache_storage = scrapelib.cache.FileCache('cache')
+    s.cache_write_only = False
+    candidates = []
+    for election_id, url, page in candidate_pages() :
+        print election_id
+        candidate = {}
+        candidate['url'] = url
+        candidate['Candidate ID'] = election_id
+        candidate.update(s.candidate_box(page))
+ 
+ 
+        candidate['results'] = []
+        candidate_results_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCandidateResults']")[0]
+        for result, _, _ in s.parseDataTable(candidate_results_table) :
+            candidate['results'].append(dict(result))
+ 
+        candidate['committees'] = []
+        committee_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCommitteeInformation']")[0]
+        for committee, _, _ in s.parseDataTable(committee_table) :
+            committee['url'] = committee['Committee Name']['url']
+            committee['Committee Name'] = committee['Committee Name']['label']
+            committee_ids = committee['ID'].split('\n')
+            for committee_id in committee_ids :
+                if 'State' in committee_id :
+                    committee['State ID'] = committee_id.split()[-1]
+                elif 'Local' in committee_id :
+                    committee['Local ID'] = committee_id.split()[-1]
+                elif 'Committee ID' in committee_id :
+                    committee['Committee ID'] = committee_id.split()[-1]
+            del committee['ID']
+            candidate['committees'].append(dict(committee))
+        candidates.append(candidate)
+ 
+ 
+    with open('candidates.json', 'w') as outfile :
+      json.dump(candidates, 
+                outfile, 
+                sort_keys=True, 
+                indent=4, 
+                separators=(',', ': '))
            
 
