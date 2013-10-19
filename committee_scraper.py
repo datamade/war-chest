@@ -50,6 +50,8 @@ class CommitteeScraper(DotNetScraper):
                         if report_id:
                             report_detail = self.lxmlize(detail_url)
                             funds_start = report_detail.xpath("//span[@id='%s']" % self.detail_funds_start)
+                            # TODO: Looks like there are Pre-Election reports are formatted differently
+                            # Need to be able to get funding data from all report formats
                             if funds_start:
                                 report_data['funds_start'] = self._clean_float(funds_start[0].text)
                             funds_end = report_detail.xpath("//span[@id='%s']" % self.detail_funds_end)
@@ -104,7 +106,6 @@ class CommitteeScraper(DotNetScraper):
             except ValueError:
                 pass
         return period_from, period_to
-        
 
 if __name__ == "__main__":
     committees = []
