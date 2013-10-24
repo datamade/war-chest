@@ -30,7 +30,8 @@ class Candidate(db.Model):
         return '<Candidate %r>' % self.name
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        return dict([(c.name, getattr(self, c.name))
+                     for c in self.__table__.columns])
 
 class Committee(db.Model):
     __tablename__ = 'committee'
@@ -47,7 +48,8 @@ class Committee(db.Model):
         return '<Committee %r>' % self.name
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        return dict([(c.name, getattr(self, c.name))
+                     for c in self.__table__.columns])
 
 class Report(db.Model):
     __tablename__ = 'report'
@@ -66,7 +68,8 @@ class Report(db.Model):
         return '<Report %r>' % self.type
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        return dict([(c.name, getattr(self, c.name))
+                     for c in self.__table__.columns])
 
 class ElectionResult(db.Model):
     __tablename__ = 'election_result'
@@ -82,7 +85,8 @@ class ElectionResult(db.Model):
         return '<ElectionResult %r %r>' % (self.type, self.year)
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        return dict([(c.name, getattr(self, c.name))
+                     for c in self.__table__.columns])
 
 if __name__ == "__main__":
     app.run(debug=True, port=9999)

@@ -29,7 +29,10 @@ class DotNetScraper(scrapelib.Scraper) :
                                             header_func)
 
     def lxmlize(self, url, payload=None):
-        entry = self.urlopen(url, 'POST', payload)
+        if payload :
+            entry = self.urlopen(url, 'POST', payload)
+        else :
+            entry = self.urlopen(url)
         page = lxml.html.fromstring(entry)
         page.make_links_absolute(url)
         return page
