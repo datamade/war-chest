@@ -111,7 +111,7 @@ if __name__ == "__main__":
     committees = []
     for cands in Candidate.query.all():
         committees.extend(cands.committees)
-    scraper = CommitteeScraper()
+    scraper = CommitteeScraper(retry_attempts=5)
     scraper.cache_storage = scrapelib.cache.FileCache('cache')
     scraper.cache_write_only = False
     for committee in committees:
