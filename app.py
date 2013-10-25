@@ -4,6 +4,7 @@ from sqlalchemy import func
 from sqlalchemy.ext.declarative import declarative_base
 import os
 from datetime import date
+import json
 
 app = Flask(__name__)
 CONN_STRING = os.environ['WARCHEST_CONN']
@@ -23,6 +24,7 @@ class Candidate(db.Model):
     address = db.Column(db.String(255), index=True)
     party = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
+    current_office_holder = db.Column(db.Boolean, default=False)
     committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')
 
@@ -87,6 +89,28 @@ class ElectionResult(db.Model):
     def as_dict(self):
         return dict([(c.name, getattr(self, c.name))
                      for c in self.__table__.columns])
+
+@app.route('/war-chest/')
+def war_chest():
+    cands = Candidate.query.filter(Candidate.current_office_holder == True).all()
+    out = []
+    for cand in cands:
+        data = {}
+        data['candidate'] = cand.name
+        data['active_committees'] = []
+        for committee in cand.committees:
+            comm = {'name': committee.name}
+            latest_report = committee.reports.order_by(Report.period_to.desc()).first()
+            # have to do this because there are some blank committee pages
+            if latest_report:
+                comm['current_funds'] = latest_report.funds_end
+                comm['last_cycle_receipts'] = latest_report.receipts
+                comm['last_cycle_expenditures'] = latest_report.expenditures
+            data['active_committees'].append(comm)
+        out.append(data)
+    resp = make_response(json.dumps(out))
+    resp.headers['Content-Type'] = 'application/json'
+    return resp
 
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
