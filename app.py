@@ -7,7 +7,8 @@ from datetime import date
 import json
 
 app = Flask(__name__)
-CONN_STRING = os.environ['WARCHEST_CONN']
+# CONN_STRING = os.environ['WARCHEST_CONN']
+CONN_STRING = 'sqlite:///war_chest.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = CONN_STRING
 
 db = SQLAlchemy(app)
