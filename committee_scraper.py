@@ -1,7 +1,7 @@
 import scrapelib
 from candidates_scraper import DotNetScraper
 from app import db, Candidate, Committee, Report
-from datetime import date
+from datetime import date, datetime
 from urlparse import parse_qs, urlparse
 
 class CommitteeScraper(DotNetScraper):
@@ -40,6 +40,11 @@ class CommitteeScraper(DotNetScraper):
                     raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).text
                     if raw_period:
                         report_data['period_from'], report_data['period_to'] = self._parse_period(raw_period)
+                    date_filed = report.find("td[@headers='ctl00_ContentPlaceHolder1_thFiled']/span").text
+                    date, time, am_pm = date_filed.split(' ')
+                    date = '/'.join([d.zfill(2) for d in date.split('/')])
+                    time = ':'.join([t.zfill(2) for t in time.split(':')])
+                    report_data['date_filed'] = datetime.strptime(' '.join([date, time, am_pm]), '%m/%d/%Y %I:%M:%S %p')
                     detailed = report.find("td[@headers='%s']/a" % self.report_type_cell)
                     if detailed is not None:
                         report_data['type'] = detailed.text
