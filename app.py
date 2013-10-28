@@ -22,6 +22,7 @@ cand_comm = db.Table('cand_comm',
 class Candidate(db.Model):
     __tablename__ = 'candidate'
     id = db.Column(db.Integer, primary_key=True)
+    pupa_id = db.Column(db.String(255), index=True)
     name = db.Column(db.String(255), index=True)
     address = db.Column(db.String(255), index=True)
     party = db.Column(db.String(15), index=True)
@@ -103,6 +104,7 @@ def war_chest():
     for cand in cands:
         data = {}
         data['candidate'] = cand.name
+        data['pupa_id'] = cand.pupa_id
         data['active_committees'] = []
         for committee in cand.committees:
             comm = {'name': committee.name}
