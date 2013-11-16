@@ -136,6 +136,7 @@ def clout_details():
         people_results = people.json()
         all_people = []
         for person in people_results:
+            # stub out response object
             p = {
                 'name': person['alderman'],
                 'id': person['id'],
@@ -145,8 +146,10 @@ def clout_details():
                 'ward': [],
                 'image': [], # url to image
                 'tenure': [], # in years
-                'war-chest': [] # in USD
+                'war_chest': [] # in USD
             }
+
+            # hit each imago URL and fetch person details and memberships
             person_detail = requests.get('%s/imago/%s/' % (url, person['id']))
             if person_detail.status_code is 200:
                 pers = person_detail.json()
@@ -163,14 +166,24 @@ def clout_details():
                         p['tenure'] = date.today().year - int(membership['start_date'])
             else:
                 resp = make_response(json.dumps({'status': 'error', 'message': 'Something went wrong while performing your query. Try again'}), 500)
-            # Now call the /war-chest/ endpoint and get the money part
-            # An alternate way would be to run the same queries as above (in the war-chest route)
-            # for just the candidate that you want. I think that might actually be better....
-            # Uh, OK, I gotta go pick up my kid
 
-            print p
+            # print p
             all_people.append(p)
-            break
+
+        # populate the war_chest amounts for each alderman
+        war_chest = requests.get('%s/war-chest/' % url)
+        if war_chest.status_code is 200:
+            war_chest_json = war_chest.json()
+            for person in all_people:
+                for committees in war_chest_json:
+                    if person['id'] == committees['pupa_id']:
+                        current_funds = 0 
+                        for c in committees['active_committees']:
+                            current_funds = current_funds + c['current_funds']
+                        person['war_chest'] = current_funds
+        else:
+            resp = make_response(json.dumps({'status': 'error', 'message': 'Something went wrong while performing your query. Try again'}), 500)
+
         resp = make_response(json.dumps(all_people, default=dhandler))
     else: 
         resp = make_response(json.dumps({'status': 'error', 'message': 'Something went wrong while performing your query. Try again'}), 500)
