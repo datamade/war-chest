@@ -6,6 +6,7 @@ from sqlalchemy.sql import not_
 import os
 from datetime import date, datetime, timedelta
 import json
+import requests
 
 app = Flask(__name__)
 # CONN_STRING = os.environ['WARCHEST_CONN']
@@ -130,17 +131,21 @@ def war_chest():
 def clout_details():
     # Call people endpoint and get all the people
     url = 'http://chicagoelections.datamade.us'
-    people = requests.get('%s/clout/')
+    people = requests.get('%s/clout/' % url)
     if people.status_code is 200:
         people_results = people.json()
         all_people = []
-        for person in all_people:
+        for person in people_results:
             p = {
                 'name': person['alderman'],
                 'id': person['id'],
                 'clout': person['clout'],
                 'rank': person['rank'],
-                'committees': [],
+                'committee_chairs': [],
+                'ward': [],
+                'image': [], # url to image
+                'tenure': [], # in years
+                'war-chest': [] # in USD
             }
             person_detail = requests.get('%s/imago/%s/' % (url, person['id']))
             if person_detail.status_code is 200:
@@ -151,19 +156,27 @@ def clout_details():
                     name = membership['organization']['name'].lower()
                     role = membership['role'].lower()
                     if not name.startswith('joint committee:') and role == 'chairman' and 'city council' not in name:
-                        p['committees'].append(membership['organization']['name'])
+                        p['committee_chairs'].append(membership['organization']['name'])
                     elif 'city council' in name:
-                        p['ward'] = membership['post_id']
-                        # Get tenure here
-                        # p['tenure'] = 
+                        p['ward'] = int(membership['post_id'])
+                        # Calculate tenure
+                        p['tenure'] = date.today().year - int(membership['start_date'])
             else:
                 resp = make_response(json.dumps({'status': 'error', 'message': 'Something went wrong while performing your query. Try again'}), 500)
             # Now call the /war-chest/ endpoint and get the money part
             # An alternate way would be to run the same queries as above (in the war-chest route)
             # for just the candidate that you want. I think that might actually be better....
             # Uh, OK, I gotta go pick up my kid
+
+            print p
+            all_people.append(p)
+            break
+        resp = make_response(json.dumps(all_people, default=dhandler))
     else: 
         resp = make_response(json.dumps({'status': 'error', 'message': 'Something went wrong while performing your query. Try again'}), 500)
+
+    resp.headers['Content-Type'] = 'application/json'
+    return resp
 
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
