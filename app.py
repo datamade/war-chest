@@ -191,5 +191,11 @@ def clout_details():
     resp.headers['Content-Type'] = 'application/json'
     return resp
 
+@app.route('/clout-details-cached/')
+def clout_details_cached():
+    resp = make_response(open('clout-details-cached.json').read())
+    resp.headers['Content-Type'] = 'application/json'
+    return resp
+
 if __name__ == "__main__":
     app.run(debug=True, port=9999)
