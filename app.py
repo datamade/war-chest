@@ -113,11 +113,24 @@ def war_chest():
             latest_report = committee.reports\
                 .filter(Report.date_filed >= year_ago)\
                 .order_by(Report.period_from.desc()).first()
+            last_cycle = db.session.query(func.sum(Report.expenditures),\
+                func.sum(Report.receipts))\
+                .filter(Report.committee_id == committee.id)\
+                .filter(Report.type == 'D-2 Semiannual Report')\
+                .filter(Report.period_from > datetime(2007, 7, 1))\
+                .filter(Report.period_to < datetime(2011, 6, 30)).all()
+            current_cycle = db.session.query(func.sum(Report.expenditures),\
+                func.sum(Report.receipts))\
+                .filter(Report.committee_id == committee.id)\
+                .filter(Report.type == 'D-2 Semiannual Report')\
+                .filter(Report.period_from > datetime(2011, 7, 1)).all()
             # have to do this because there are some blank committee pages
             if latest_report:
                 comm['current_funds'] = latest_report.funds_end
-                comm['last_cycle_receipts'] = latest_report.receipts
-                comm['last_cycle_expenditures'] = latest_report.expenditures
+                comm['last_cycle_receipts'] = last_cycle[0][1]
+                comm['last_cycle_expenditures'] = last_cycle[0][0]
+                comm['current_cycle_receipts'] = current_cycle[0][1]
+                comm['current_cycle_expenditures'] = current_cycle[0][0]
                 comm['latest_report_url'] = latest_report.detail_url
                 comm['date_filed'] = latest_report.date_filed
                 comm['reporting_period_end'] = latest_report.period_to
