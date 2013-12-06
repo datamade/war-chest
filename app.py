@@ -113,33 +113,47 @@ def war_chest():
             comm = {'name': committee.name}
             comm['committee_url'] = committee.url
             last_q = " ".join('select sum(receipts), sum(expenditures) from \
-                report inner join (select type, period_from, period_to, \
+                report, \
+                (select replace(report.type, " (Amendment)", "") as type, \
+                period_from, period_to, committee_id, \
                 max(date_filed) as date_filed from report where \
                 committee_id = :comm_id and \
                 (type like "D-2 Semiannual Report%" or type like \
-                "Quarterly%") group by replace(type, " (Amendment)", ""), \
-                period_from, period_to) using (type, period_from, period_to, \
-                date_filed) where period_from >= :per_from and period_to <= \
+                 "Quarterly%") group by replace(type, " (Amendment)", ""), \
+                period_from, period_to) AS M \
+                where replace(report.type, " (Amendment)", "")=M.type \
+                AND report.period_from = M.period_from \
+                AND report.period_to = M.period_to \
+                AND report.date_filed=M.date_filed \
+                AND report.committee_id=M.committee_id \
+                AND report.period_from >= :per_from and report.period_to <= \
                 :per_to;'.split())
             current_q = " ".join('select sum(receipts), sum(expenditures) from \
-                report inner join (select type, period_from, period_to, \
+                report, \
+                (select replace(report.type, " (Amendment)", "") as type, \
+                period_from, period_to, committee_id, \
                 max(date_filed) as date_filed from report where \
                 committee_id = :comm_id and \
                 (type like "D-2 Semiannual Report%" or type like \
-                "Quarterly%") group by replace(type, " (Amendment)", ""), \
-                period_from, period_to) using (type, period_from, period_to, \
-                date_filed) where period_from >= :per_from;'.split())
+                 "Quarterly%") group by replace(type, " (Amendment)", ""), \
+                period_from, period_to) AS M \
+                where replace(report.type, " (Amendment)", "")=M.type \
+                AND report.period_from = M.period_from \
+                AND report.period_to = M.period_to \
+                AND report.date_filed=M.date_filed \
+                AND report.committee_id=M.committee_id \
+                AND report.period_from >= :per_from;'.split())
             latest_report = db.session.query(Report)\
                 .filter(Report.committee_id == committee.id)\
                 .filter(or_(Report.type.like('Quarterly%'), \
                             Report.type.like('D-2 Semiannual Report%')))\
                 .order_by(Report.date_filed.desc()).first()
-            last_cycle_exp, last_cycle_rec = [r for r in 
+            last_cycle_rec, last_cycle_exp = [r for r in 
                 db.engine.execute(last_q,
                 comm_id=committee.id, 
                 per_to='2011-06-30',
                 per_from='2007-07-01')][0]
-            current_cycle_exp, current_cycle_rec = [r for r in 
+            current_cycle_rec, current_cycle_exp = [r for r in 
                 db.engine.execute(current_q,
                 comm_id=committee.id, 
                 per_from='2011-07-01')][0]
