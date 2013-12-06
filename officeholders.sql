@@ -4,7 +4,7 @@ DELETE from cand_comm WHERE rowid NOT IN (SELECT MAX(rowid) FROM cand_comm GROUP
 
 /* Set current aldermen and assign their pupa_id */
 update candidate set current_office_holder=1, pupa_id = "ocd-person/a6785b48-3f6e-11e3-8ca6-22000a971dca" where name = "Edward M Burke";
-update candidate set current_office_holder=1 where name = "Deb Mell";
+update candidate set current_office_holder=1, pupa_id = "ocd-person/9466d12a-3cec-11e3-8a24-22000a971dca" where name = "Deb Mell";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94674f56-3cec-11e3-8a24-22000a971dca" where name = "Joseph A Moore";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94682994-3cec-11e3-8a24-22000a971dca" where name = 'Regner "Ray" Suarez';
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946a00b6-3cec-11e3-8a24-22000a971dca" where name = "Patrick J O'Connor";

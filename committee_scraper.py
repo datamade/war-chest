@@ -34,7 +34,7 @@ class CommitteeScraper(DotNetScraper):
         print url
         for page in self._grok_pages(start_page, committee_id):
             if page is not None:
-                reports = page.xpath("//tr[@class='%s']" % self.report_row)
+                reports = page.xpath("//tr[starts-with(@class, '%s')]" % self.report_row)
                 for report in reports:
                     report_data = {}
                     raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).text
@@ -114,7 +114,7 @@ class CommitteeScraper(DotNetScraper):
 
 if __name__ == "__main__":
     committees = []
-    for cands in Candidate.query.all():
+    for cands in Candidate.query.filter(Candidate.current_office_holder == 1).all():
         committees.extend(cands.committees)
     scraper = CommitteeScraper(retry_attempts=5)
     scraper.cache_storage = scrapelib.cache.FileCache('cache')
