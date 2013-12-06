@@ -108,50 +108,61 @@ def war_chest():
         data['candidate'] = cand.name
         data['pupa_id'] = cand.pupa_id
         data['active_committees'] = []
-        data['inactive_committees'] = []
         for committee in cand.committees:
             comm = {'name': committee.name}
             comm['committee_url'] = committee.url
-            q = '''
-                select sum(receipts), sum(expenditures) from report 
-                inner join (select type, period_from, period_to, 
-                max(date_filed) as date_filed from report where 
-                committee_id = :comm_id and 
-                (type like "D-2 Semiannual Report%" or type like 
-                "Quarterly%") group by replace(type, " (Amendment)", ""), 
-                period_from, period_to) using (type, period_from, period_to, 
-                date_filed) where period_from > :per_from and period_to < 
-                :per_to order by period_from;
-                '''
+            last_q = " ".join('select sum(receipts), sum(expenditures) from \
+                report inner join (select type, period_from, period_to, \
+                max(date_filed) as date_filed from report where \
+                committee_id = :comm_id and \
+                (type like "D-2 Semiannual Report%" or type like \
+                "Quarterly%") group by replace(type, " (Amendment)", ""), \
+                period_from, period_to) using (type, period_from, period_to, \
+                date_filed) where period_from >= :per_from and period_to <= \
+                :per_to;'.split())
+            current_q = " ".join('select sum(receipts), sum(expenditures) from \
+                report inner join (select type, period_from, period_to, \
+                max(date_filed) as date_filed from report where \
+                committee_id = :comm_id and \
+                (type like "D-2 Semiannual Report%" or type like \
+                "Quarterly%") group by replace(type, " (Amendment)", ""), \
+                period_from, period_to) using (type, period_from, period_to, \
+                date_filed) where period_from >= :per_from;'.split())
             latest_report = committee.reports\
-                                     .order_by(Report.period_from.desc()).first()
-            last_cycle = db.session.query(func.sum(Report.expenditures),\
-                func.sum(Report.receipts))\
-                .filter(Report.committee_id == committee.id)\
-                .filter(Report.type == 'D-2 Semiannual Report')\
-                .filter(Report.period_from > datetime(2007, 7, 1))\
-                .filter(Report.period_to < datetime(2011, 6, 30)).all()
-            current_cycle = db.session.query(func.sum(Report.expenditures),\
-                func.sum(Report.receipts))\
-                .filter(Report.committee_id == committee.id)\
-                .filter(Report.type == 'D-2 Semiannual Report')\
-                .filter(Report.period_from > datetime(2011, 7, 1)).all()
+                .filter(Report.date_filed >= year_ago)\
+                .order_by(Report.period_from.desc()).first()
+            last_cycle_exp, last_cycle_rec = [r for r in 
+                db.engine.execute(last_q,
+                comm_id=committee.id, 
+                per_to='2011-06-30',
+                per_from='2007-07-01')][0]
+            current_cycle_exp, current_cycle_rec = [r for r in 
+                db.engine.execute(current_q,
+                comm_id=committee.id, 
+                per_from='2007-07-01')][0]
             # have to do this because there are some blank committee pages
-            comm['current_funds'] = latest_report.funds_end
-            comm['last_cycle_receipts'] = last_cycle[0][1]
-            comm['last_cycle_expenditures'] = last_cycle[0][0]
-            comm['current_cycle_receipts'] = current_cycle[0][1]
-            comm['current_cycle_expenditures'] = current_cycle[0][0]
-            comm['latest_report_url'] = latest_report.detail_url
-            comm['date_filed'] = latest_report.date_filed
-            comm['reporting_period_end'] = latest_report.period_to
-            if committee.status == "Active" :
+            if latest_report:
+                comm['current_funds'] = latest_report.funds_end
+                if last_cycle_rec:
+                    comm['last_cycle_receipts'] = '%.2f' % last_cycle_rec
+                else:
+                    comm['last_cycle_receipts'] = None
+                if last_cycle_exp:
+                    comm['last_cycle_expenditures'] = '%.2f' % last_cycle_exp
+                else:
+                    comm['last_cycle_expenditures'] = None
+                if current_cycle_rec:
+                    comm['current_cycle_receipts'] = '%.2f' % current_cycle_rec
+                else:
+                    comm['current_cycle_receipts'] = None
+                if current_cycle_exp:
+                    comm['current_cycle_expenditures'] = '%.2f' % current_cycle_exp
+                else:
+                    comm['current_cycle_expenditures'] = None
+                comm['latest_report_url'] = latest_report.detail_url
+                comm['date_filed'] = latest_report.date_filed
+                comm['reporting_period_end'] = latest_report.period_to
                 data['active_committees'].append(comm)
-            else :
-                data['inactive_committees'].append(comm)
-                                
-
-
         out.append(data)
     resp = make_response(json.dumps(out, default=dhandler))
     resp.headers['Content-Type'] = 'application/json'
