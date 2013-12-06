@@ -7,7 +7,8 @@ def saveit(alderman):
         'id': alderman['Candidate ID'],
         'name': alderman['Name'],
         'party': alderman['Party'],
-        'url': alderman['url']
+        'url': alderman['url'],
+        'office' : alderman['Office']
     }
     cand = Candidate(**cand_data)
     comms = []
@@ -46,6 +47,7 @@ def saveit(alderman):
 if __name__ == '__main__':
     db.create_all()
     candidates = json.loads(open('candidates.json').read())
-    aldermen = [c for c in candidates if 'Alderman/Chicago' in c['Office']]
-    for alderman in aldermen:
-        saveit(alderman)
+    for candidate in candidates :
+        if ('Alderman/Chicago' in candidate['Office']
+            or candidate['Name'] in ("Michael D Chandler", "Deb Mell")) : 
+            saveit(candidate)

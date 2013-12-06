@@ -1,4 +1,4 @@
-scrapelib
+git+git://github.com/sunlightlabs/scrapelib.git#egg=scrapelib
 lxml
 xmltodict
 Flask

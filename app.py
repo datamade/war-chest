@@ -28,6 +28,7 @@ class Candidate(db.Model):
     address = db.Column(db.String(255), index=True)
     party = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
+    office = db.Column(db.String(255), index=True)
     current_office_holder = db.Column(db.Boolean, default=False)
     committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')
