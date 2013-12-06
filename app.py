@@ -108,6 +108,7 @@ def war_chest():
         data['candidate'] = cand.name
         data['pupa_id'] = cand.pupa_id
         data['active_committees'] = []
+        data['inactive_committees'] = []
         for committee in cand.committees:
             comm = {'name': committee.name}
             comm['committee_url'] = committee.url
@@ -123,8 +124,7 @@ def war_chest():
                 :per_to order by period_from;
                 '''
             latest_report = committee.reports\
-                .filter(Report.date_filed >= year_ago)\
-                .order_by(Report.period_from.desc()).first()
+                                     .order_by(Report.period_from.desc()).first()
             last_cycle = db.session.query(func.sum(Report.expenditures),\
                 func.sum(Report.receipts))\
                 .filter(Report.committee_id == committee.id)\
@@ -137,16 +137,21 @@ def war_chest():
                 .filter(Report.type == 'D-2 Semiannual Report')\
                 .filter(Report.period_from > datetime(2011, 7, 1)).all()
             # have to do this because there are some blank committee pages
-            if latest_report:
-                comm['current_funds'] = latest_report.funds_end
-                comm['last_cycle_receipts'] = last_cycle[0][1]
-                comm['last_cycle_expenditures'] = last_cycle[0][0]
-                comm['current_cycle_receipts'] = current_cycle[0][1]
-                comm['current_cycle_expenditures'] = current_cycle[0][0]
-                comm['latest_report_url'] = latest_report.detail_url
-                comm['date_filed'] = latest_report.date_filed
-                comm['reporting_period_end'] = latest_report.period_to
+            comm['current_funds'] = latest_report.funds_end
+            comm['last_cycle_receipts'] = last_cycle[0][1]
+            comm['last_cycle_expenditures'] = last_cycle[0][0]
+            comm['current_cycle_receipts'] = current_cycle[0][1]
+            comm['current_cycle_expenditures'] = current_cycle[0][0]
+            comm['latest_report_url'] = latest_report.detail_url
+            comm['date_filed'] = latest_report.date_filed
+            comm['reporting_period_end'] = latest_report.period_to
+            if committee.status == "Active" :
                 data['active_committees'].append(comm)
+            else :
+                data['inactive_committees'].append(comm)
+                                
+
+
         out.append(data)
     resp = make_response(json.dumps(out, default=dhandler))
     resp.headers['Content-Type'] = 'application/json'
