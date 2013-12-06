@@ -111,6 +111,17 @@ def war_chest():
         for committee in cand.committees:
             comm = {'name': committee.name}
             comm['committee_url'] = committee.url
+            q = '''
+                select sum(receipts), sum(expenditures) from report 
+                inner join (select type, period_from, period_to, 
+                max(date_filed) as date_filed from report where 
+                committee_id = :comm_id and 
+                (type like "D-2 Semiannual Report%" or type like 
+                "Quarterly%") group by replace(type, " (Amendment)", ""), 
+                period_from, period_to) using (type, period_from, period_to, 
+                date_filed) where period_from > :per_from and period_to < 
+                :per_to order by period_from;
+                '''
             latest_report = committee.reports\
                 .filter(Report.date_filed >= year_ago)\
                 .order_by(Report.period_from.desc()).first()
