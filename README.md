@@ -8,6 +8,14 @@ Installation
 pip install -r requirements.txt
 ```
 
+Setting up the databse
+```console
+python candidates_scraper.py
+python prime_db.py
+python committee_scraper.py
+sqlite3 war_chest.db < officeholders.sql
+```
+
 Usage
 ```console
 python app.py
