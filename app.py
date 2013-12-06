@@ -2,7 +2,7 @@ from flask import Flask, request, make_response
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql import not_
+from sqlalchemy.sql import not_, or_
 import os
 from datetime import date, datetime, timedelta
 import json
@@ -108,6 +108,7 @@ def war_chest():
         data['candidate'] = cand.name
         data['pupa_id'] = cand.pupa_id
         data['active_committees'] = []
+        data['inactive_committees'] = []
         for committee in cand.committees:
             comm = {'name': committee.name}
             comm['committee_url'] = committee.url
@@ -128,8 +129,10 @@ def war_chest():
                 "Quarterly%") group by replace(type, " (Amendment)", ""), \
                 period_from, period_to) using (type, period_from, period_to, \
                 date_filed) where period_from >= :per_from;'.split())
-            latest_report = committee.reports\
-                .filter(Report.date_filed >= year_ago)\
+            latest_report = db.session.query(Report)\
+                .filter(Report.committee_id == committee.id)\
+                .filter(or_(Report.type.like('Quarterly%'), \
+                Report.type.like('D-2 Semiannual Report%')))\
                 .order_by(Report.period_from.desc()).first()
             last_cycle_exp, last_cycle_rec = [r for r in 
                 db.engine.execute(last_q,
@@ -162,7 +165,10 @@ def war_chest():
                 comm['latest_report_url'] = latest_report.detail_url
                 comm['date_filed'] = latest_report.date_filed
                 comm['reporting_period_end'] = latest_report.period_to
-                data['active_committees'].append(comm)
+                if committee.status == 'Active':
+                    data['active_committees'].append(comm)
+                else:
+                    data['inactive_committees'].append(comm)
         out.append(data)
     resp = make_response(json.dumps(out, default=dhandler))
     resp.headers['Content-Type'] = 'application/json'
