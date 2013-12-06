@@ -132,8 +132,8 @@ def war_chest():
             latest_report = db.session.query(Report)\
                 .filter(Report.committee_id == committee.id)\
                 .filter(or_(Report.type.like('Quarterly%'), \
-                Report.type.like('D-2 Semiannual Report%')))\
-                .order_by(Report.period_from.desc()).first()
+                            Report.type.like('D-2 Semiannual Report%')))\
+                .order_by(Report.date_filed.desc()).first()
             last_cycle_exp, last_cycle_rec = [r for r in 
                 db.engine.execute(last_q,
                 comm_id=committee.id, 
@@ -142,7 +142,8 @@ def war_chest():
             current_cycle_exp, current_cycle_rec = [r for r in 
                 db.engine.execute(current_q,
                 comm_id=committee.id, 
-                per_from='2007-07-01')][0]
+                per_from='2011-07-01')][0]
+
             # have to do this because there are some blank committee pages
             if latest_report:
                 comm['current_funds'] = latest_report.funds_end
@@ -165,6 +166,7 @@ def war_chest():
                 comm['latest_report_url'] = latest_report.detail_url
                 comm['date_filed'] = latest_report.date_filed
                 comm['reporting_period_end'] = latest_report.period_to
+                comm['reporting_period_begin'] = latest_report.period_from
                 if committee.status == 'Active':
                     data['active_committees'].append(comm)
                 else:
