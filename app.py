@@ -7,13 +7,18 @@ import os
 from datetime import date, datetime, timedelta
 import json
 import requests
+from flask.ext.script import Manager
+from flask.ext.migrate import Migrate, MigrateCommand
 
 app = Flask(__name__)
-# CONN_STRING = os.environ['WARCHEST_CONN']
 CONN_STRING = 'sqlite:///war_chest.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = CONN_STRING
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 
 cand_comm = db.Table('cand_comm',
    db.Column('candidate_id', db.Integer, db.ForeignKey('candidate.id')),
@@ -40,6 +45,17 @@ class Candidate(db.Model):
         return dict([(c.name, getattr(self, c.name))
                      for c in self.__table__.columns])
 
+class Officer(db.Model):
+    __tablename__ = 'officer'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    title = db.Column(db.String)
+    address = db.Column(db.String)
+    committee_id = db.Column(db.Integer, db.ForeignKey('committee.id'), index=True)
+
+    def __repr__(self):
+        return '<Officer %r>' % self.name
+
 class Committee(db.Model):
     __tablename__ = 'committee'
     id = db.Column(db.Integer, primary_key=True)
@@ -50,6 +66,7 @@ class Committee(db.Model):
     status = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
     reports = db.relationship('Report', backref='committee', lazy='dynamic')
+    officers = db.relationship('Officer', backref='committee', lazy='dynamic')
 
     def __repr__(self):
         return '<Committee %r>' % self.name
@@ -191,4 +208,4 @@ def war_chest():
     return resp
 
 if __name__ == "__main__":
-    app.run(debug=True, port=9999)
+    manager.run()
