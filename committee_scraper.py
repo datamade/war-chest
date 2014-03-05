@@ -33,7 +33,7 @@ class CommitteeScraper(object):
                         data['state_id'] = i.split(' ')[1]
                     elif 'Local' in i:
                         data['local_id'] = i.split(' ')[1]
-                data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()'))
+                data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()')
                 yield data
 
 
