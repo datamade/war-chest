@@ -1,7 +1,11 @@
 {
     "Ameya Pawar": {
         "cand_id": 24270, 
-        "officer_ids": []
+        "officer_ids": [
+            1956, 
+            2302, 
+            2303
+        ]
     }, 
     "Anthony Beale": {
         "cand_id": 14117, 
@@ -9,7 +13,10 @@
     }, 
     "Ariel E Reboyras": {
         "cand_id": 17895, 
-        "officer_ids": []
+        "officer_ids": [
+            1364, 
+            1474
+        ]
     }, 
     "Bob Fioretti": {
         "cand_id": 25571, 
@@ -17,15 +24,23 @@
     }, 
     "Brendan Reilly": {
         "cand_id": 20516, 
-        "officer_ids": []
+        "officer_ids": [
+            1506, 
+            2504
+        ]
     }, 
     "Carrie M Austin": {
         "cand_id": 9448, 
-        "officer_ids": []
+        "officer_ids": [
+            33
+        ]
     }, 
     "Daniel S Solis": {
         "cand_id": 10981, 
-        "officer_ids": []
+        "officer_ids": [
+            997, 
+            1238
+        ]
     }, 
     "Deb Mell": {
         "cand_id": 21906, 
@@ -33,15 +48,24 @@
     }, 
     "Deborah L Graham": {
         "cand_id": 24898, 
-        "officer_ids": []
+        "officer_ids": [
+            1290, 
+            2241
+        ]
     }, 
     "Debra Silverstein": {
         "cand_id": 25135, 
-        "officer_ids": []
+        "officer_ids": [
+            2093
+        ]
     }, 
     "Edward M Burke": {
         "cand_id": 2489, 
-        "officer_ids": []
+        "officer_ids": [
+            1310,
+            74, 
+            87
+        ]
     }, 
     "Emma Mitts": {
         "cand_id": 15421, 
@@ -49,7 +73,9 @@
     }, 
     "George A Cardenas": {
         "cand_id": 18060, 
-        "officer_ids": []
+        "officer_ids": [
+            1405
+        ]
     }, 
     "Harry Osterman": {
         "cand_id": 25127, 
@@ -57,11 +83,16 @@
     }, 
     "Howard B Brookins, Jr": {
         "cand_id": 14159, 
-        "officer_ids": []
+        "officer_ids": [
+            1160, 
+            1161
+        ]
     }, 
     "James A Balcer": {
         "cand_id": 14125, 
-        "officer_ids": []
+        "officer_ids": [
+            1436
+        ]
     }, 
     "James Cappleman": {
         "cand_id": 20952, 
@@ -69,15 +100,22 @@
     }, 
     "Jason Ervin": {
         "cand_id": 25244, 
-        "officer_ids": []
+        "officer_ids": [
+            2480
+        ]
     }, 
     "JoAnn Thompson": {
         "cand_id": 17208, 
-        "officer_ids": []
+        "officer_ids": [
+            1285
+        ]
     }, 
     "John A Pope": {
         "cand_id": 14059, 
-        "officer_ids": []
+        "officer_ids": [
+            1140, 
+            1544
+        ]
     }, 
     "John Arena": {
         "cand_id": 24911, 
@@ -85,39 +123,64 @@
     }, 
     "Joseph A Moore": {
         "cand_id": 2059, 
-        "officer_ids": []
+        "officer_ids": [
+            926, 
+            927
+        ]
     }, 
     "Latasha Thomas": {
         "cand_id": 15655, 
-        "officer_ids": []
+        "officer_ids": [
+            1004
+        ]
     }, 
     "Leslie A Hairston": {
         "cand_id": 14778, 
-        "officer_ids": []
+        "officer_ids": [
+            1081, 
+            1224
+        ]
     }, 
     "Lona Lane": {
         "cand_id": 14150, 
-        "officer_ids": []
+        "officer_ids": [
+            1654
+        ]
     }, 
     "Margaret Laurino": {
         "cand_id": 7853, 
-        "officer_ids": []
+        "officer_ids": [
+            949
+        ]
     }, 
     "Marty Quinn": {
         "cand_id": 25487, 
-        "officer_ids": []
+        "officer_ids": [
+            2254
+        ]
     }, 
     "Mary O'Connor": {
         "cand_id": 25565, 
-        "officer_ids": []
+        "officer_ids": [
+            1790, 
+            1964
+        ]
     }, 
     "Matt O'Shea": {
         "cand_id": 25077, 
-        "officer_ids": []
+        "officer_ids": [
+            49
+        ]
     }, 
     "Michael Chandler": {
         "cand_id": 9045, 
-        "officer_ids": []
+        "officer_ids": [
+            894, 
+            895, 
+            989, 
+            2101, 
+            2457
+        ]
     }, 
     "Michael R Zalewski": {
         "cand_id": 9425, 
@@ -125,19 +188,32 @@
     }, 
     "Michele Smith": {
         "cand_id": 24971, 
-        "officer_ids": []
+        "officer_ids": [
+            1536, 
+            1858,
+            2357
+        ]
     }, 
     "Michelle A Harris": {
         "cand_id": 21169, 
-        "officer_ids": []
+        "officer_ids": [
+            90,
+            2437
+        ]
     }, 
     "Natashia Holmes": {
         "cand_id": 27778, 
-        "officer_ids": []
+        "officer_ids": [
+            2514, 
+            2520
+        ]
     }, 
     "Nicholas Sposato": {
         "cand_id": 21027, 
-        "officer_ids": []
+        "officer_ids": [
+            1582, 
+            2411
+        ]
     }, 
     "Pat Dowell": {
         "cand_id": 17696, 
@@ -145,23 +221,42 @@
     }, 
     "Patrick J O'Connor": {
         "cand_id": 2649, 
-        "officer_ids": []
+        "officer_ids": [
+            209, 
+            2328
+        ]
     }, 
     "Proco Joe Moreno": {
         "cand_id": 24885, 
-        "officer_ids": []
+        "officer_ids": [
+            1812
+        ]
     }, 
     "Regner \"Ray\" Suarez": {
         "cand_id": 2614, 
-        "officer_ids": []
+        "officer_ids": [
+            373, 
+            1220
+        ]
     }, 
     "Rey Colon": {
         "cand_id": 13838, 
-        "officer_ids": []
+        "officer_ids": [
+            1085, 
+            1338, 
+            1461, 
+            1463
+        ]
     }, 
     "Ricardo Munoz": {
         "cand_id": 7187, 
-        "officer_ids": []
+        "officer_ids": [
+            656, 
+            657, 
+            972, 
+            973, 
+            2334
+        ]
     }, 
     "Roberto Maldonado": {
         "cand_id": 23923, 
@@ -169,11 +264,16 @@
     }, 
     "Roderick T Sawyer": {
         "cand_id": 25044, 
-        "officer_ids": []
+        "officer_ids": [
+            1322
+        ]
     }, 
     "Scott Waguespack": {
         "cand_id": 21073, 
-        "officer_ids": []
+        "officer_ids": [
+            1616, 
+            2335
+        ]
     }, 
     "Tim Cullerton": {
         "cand_id": 25249, 
@@ -181,22 +281,36 @@
     }, 
     "Tom Tunney": {
         "cand_id": 17880, 
-        "officer_ids": []
+        "officer_ids": [
+            341,
+            61
+        ]
     }, 
     "Toni L Foulkes": {
         "cand_id": 21287, 
-        "officer_ids": []
+        "officer_ids": [
+            1710, 
+            2055
+        ]
     }, 
     "Walter Burnett, Jr": {
         "cand_id": 8848, 
-        "officer_ids": []
+        "officer_ids": [
+            746, 
+            995,
+            954
+        ]
     }, 
     "Will Burns": {
         "cand_id": 25573, 
-        "officer_ids": []
+        "officer_ids": [
+            1799
+        ]
     }, 
     "Willie B Cochran": {
         "cand_id": 21059, 
-        "officer_ids": []
+        "officer_ids": [
+            1598
+        ]
     }
 }

@@ -14,7 +14,7 @@ def dump_cands():
         .all()
     cand_mapping = {}
     for cand in cands:
-        cand_mapping[cand.name] = cand.id
+        cand_mapping[cand.name] = {'cand_id': cand.id, 'officer_ids': []}
     return OrderedDict(sorted(cand_mapping.iteritems(), key=itemgetter(0)))
 
 def dump_officers():
