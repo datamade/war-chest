@@ -3,3 +3,4 @@ lxml
 xmltodict
 Flask
 flask-sqlalchemy
+Flask-Migrate==1.2.0
