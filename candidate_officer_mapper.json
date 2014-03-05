@@ -96,7 +96,9 @@
     }, 
     "James Cappleman": {
         "cand_id": 20952, 
-        "officer_ids": []
+        "officer_ids": [
+            1548
+        ]
     }, 
     "Jason Ervin": {
         "cand_id": 25244, 
@@ -119,7 +121,10 @@
     }, 
     "John Arena": {
         "cand_id": 24911, 
-        "officer_ids": []
+        "officer_ids": [
+            1982, 
+            2441
+        ]
     }, 
     "Joseph A Moore": {
         "cand_id": 2059, 
@@ -183,7 +188,10 @@
     }, 
     "Michael R Zalewski": {
         "cand_id": 9425, 
-        "officer_ids": []
+        "officer_ids": [
+            1073, 
+            1497
+        ]
     }, 
     "Michele Smith": {
         "cand_id": 24971, 

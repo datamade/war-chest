@@ -70,6 +70,7 @@ class Committee(db.Model):
     local_id = db.Column(db.Integer, index=True)
     state_id = db.Column(db.Integer, index=True)
     status = db.Column(db.String(15), index=True)
+    type = db.Column(db.String(25), index=True)
     url = db.Column(db.String(255))
     reports = db.relationship('Report', backref='committee', lazy='dynamic')
     officers = db.relationship('Officer', backref='committee', lazy='dynamic')

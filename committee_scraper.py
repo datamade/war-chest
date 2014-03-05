@@ -33,7 +33,9 @@ class CommitteeScraper(object):
                         data['state_id'] = i.split(' ')[1]
                     elif 'Local' in i:
                         data['local_id'] = i.split(' ')[1]
-                data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()')
+                data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()'))
+                detail = self.lxmlize(data['url'])
+                data['type'] = detail.xpath('//span[@id="ctl00_ContentPlaceHolder1_lblTypeOfCommittee"]')[0].text
                 yield data
 
 
