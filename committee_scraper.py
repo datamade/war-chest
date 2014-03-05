@@ -1,52 +1,59 @@
-import scrapelib
 import requests
-from candidates_scraper import DotNetScraper
 from app import db, Committee
 from urllib import urlencode
 import lxml.html
 
-class CommitteeScraper(DotNetScraper):
-    def __init__(self, base_url, params,
-        raise_errors=False,
-        requests_per_minute=60,
-        follow_robots=False,
-        retry_attempts=0,
-        retry_wait_seconds=5,
-        header_func=None):
-        super(CommitteeScraper, self).__init__(raise_errors,
-                                               requests_per_minute,
-                                               follow_robots,
-                                               retry_attempts,
-                                               retry_wait_seconds,
-                                               header_func,)
+class CommitteeScraper(object):
+    def __init__(self, base_url, params):
         self.base_url = base_url
         self.params = params
+        self.session = requests.Session()
+
+    def lxmlize(self, url, payload=None):
+        if payload :
+            entry = self.session.post(url, 'POST', payload)
+        else :
+            entry = self.session.get(url)
+        page = lxml.html.fromstring(entry.content)
+        page.make_links_absolute(url)
+        return page
 
     def scrape_committees(self):
-        print [p for p in self._grok_pages()]
+        for page in self._grok_pages():
+            table_rows = page.xpath('//tr[starts-with(@class, "SearchListTableRow")]')
+            for row in table_rows:
+                data = {}
+                data['name'] = ' '.join(row.find('td[@headers="thCommitteeName"]/').xpath('.//text()'))
+                data['url'] = row.find('td[@headers="thCommitteeName"]/a').attrib['href']
+                data['address'] = ' '.join(row.find('td[@headers="thAddress"]/').xpath('.//text()'))
+                data['status'] = ' '.join(row.find('td[@headers="thStatus"]/').xpath('.//text()'))
+                ids = row.find('td[@headers="thStateLocalID"]/').xpath('.//text()')
+                for i in ids:
+                    if 'State' in i:
+                        data['state_id'] = i.split(' ')[1]
+                    elif 'Local' in i:
+                        data['local_id'] = i.split(' ')[1]
+                data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()'))
+                yield data
+
 
     def _grok_pages(self):
         query_string = urlencode(self.params)
         url = '%s?%s' % (self.base_url, query_string)
-        start_page = self.urlopen(url)
-        page = lxml.html.fromstring(start_page)
-        #page.make_links_absolute(url)
+        page = self.lxmlize(url)
         page_counter = page.xpath("//span[@id='ctl00_ContentPlaceHolder1_lbRecordsInfo']")[0].text
         if page_counter:
             page_count = (int(page_counter.split(' ')[-1]) / 10)
-            if page_count > 0:
-                for page_num in range(page_count):
-                    self.params['pageindex'] = page_num
-                    qs = urlencode(self.params)
-                    url = '%s?%s' % (self.base_url, qs)
-                    # yield self.lxmlize(url)
-                    yield url
-            else:
-                yield query_string
+            for page_num in range(page_count):
+                self.params['pageindex'] = page_num
+                qs = urlencode(self.params)
+                url = '%s?%s' % (self.base_url, qs)
+                yield self.lxmlize(url)
         else:
             yield None
 
 if __name__ == "__main__":
+    from app import db, Committee
     base_url = 'http://www.elections.state.il.us/CampaignDisclosure/CommitteeSearch.aspx'
     params = {
         'ddlAddressSearchType': 'Starts with',
@@ -58,7 +65,7 @@ if __name__ == "__main__":
         'chkActive': 'True',
         'txtCity': 'Chicago'
     }
-    scraper = CommitteeScraper(base_url, params, retry_attempts=5)
-    scraper.cache_storage = scrapelib.cache.FileCache('cache')
-    scraper.cache_write_only = False
-    scraper.scrape_committees()
+    scraper = CommitteeScraper(base_url, params)
+    for committee in scraper.scrape_committees():
+        # Save to DB
+        print committee
