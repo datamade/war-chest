@@ -34,6 +34,7 @@ class Candidate(db.Model):
     party = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
     office = db.Column(db.String(255), index=True)
+    committee_positions = db.relationship('Officer', backref='candidate', lazy='dynamic')
     current_office_holder = db.Column(db.Boolean, default=False)
     committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')
@@ -52,6 +53,7 @@ class Officer(db.Model):
     title = db.Column(db.String)
     address = db.Column(db.String)
     committee_id = db.Column(db.Integer, db.ForeignKey('committee.id'), index=True)
+    candidate_id = db.Column(db.Integer, db.ForeignKey('candidate.id'), index=True)
 
     def __repr__(self):
         return '<Officer %r>' % self.name
