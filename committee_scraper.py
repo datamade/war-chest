@@ -67,5 +67,14 @@ if __name__ == "__main__":
     }
     scraper = CommitteeScraper(base_url, params)
     for committee in scraper.scrape_committees():
-        # Save to DB
-        print committee
+        # Save to DB and maybe write as JSON?
+        comm = db.session.query(Committee).get(int(committee['id']))
+        if comm:
+            for k,v in committee.items():
+                setattr(comm, k, v)
+            db.session.add(comm)
+            db.session.commit()
+        else:
+            comm = Committee(**committee)
+            db.session.add(comm)
+            db.session.commit()

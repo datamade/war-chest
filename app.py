@@ -55,6 +55,10 @@ class Officer(db.Model):
 
     def __repr__(self):
         return '<Officer %r>' % self.name
+    
+    def as_dict(self):
+        return dict([(c.name, getattr(self, c.name))
+                     for c in self.__table__.columns])
 
 class Committee(db.Model):
     __tablename__ = 'committee'
