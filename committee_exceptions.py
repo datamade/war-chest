@@ -1,6 +1,14 @@
 from app import db, Candidate, Committee
 
+def add_pdf_reports():
+    the_7th = Report.query.get(522550)
+    the_7th.funds_end
+
 def add_exceptions():
+    joe = Candidate.query.get(24885)
+    first = Committee.query.get(24042)
+    joe.committees.append(first)
+    db.session.add(joe)
     emma = Candidate.query.get(15421)
     new_37 = Committee.query.get(18118)
     emma.committees.append(new_37)
