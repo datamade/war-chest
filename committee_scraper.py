@@ -36,6 +36,7 @@ class CommitteeScraper(object):
                 data['id'] = ' '.join(row.find('td[@headers="thCommitteeID"]/').xpath('.//text()'))
                 detail = self.lxmlize(data['url'])
                 data['type'] = detail.xpath('//span[@id="ctl00_ContentPlaceHolder1_lblTypeOfCommittee"]')[0].text
+                candidates_url = detail.x
                 yield data
 
 

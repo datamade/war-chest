@@ -9,6 +9,8 @@ import json
 import requests
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
+from operator import itemgetter
+from itertools import groupby
 
 app = Flask(__name__)
 CONN_STRING = 'sqlite:///war_chest.db'
@@ -93,6 +95,7 @@ class Report(db.Model):
     funds_end = db.Column(db.Float)
     receipts = db.Column(db.Float)
     expenditures = db.Column(db.Float)
+    invest_total = db.Column(db.Float)
     detail_url = db.Column(db.String(255))
     committee_id = db.Column(db.Integer, db.ForeignKey('committee.id'), index=True)
 
@@ -124,17 +127,33 @@ dhandler = lambda obj: obj.isoformat() if isinstance(obj, date) or isinstance(ob
 
 @app.route('/war-chest/')
 def war_chest():
-    cands = Candidate.query.filter(Candidate.current_office_holder == True).all()
-    out = []
+    res = db.session.query(Candidate, Officer)\
+        .filter(Officer.title.like('Chair%'))\
+        .filter(Officer.candidate_id == Candidate.id).all()
+    s = sorted(res, key=itemgetter(0))
+    cands = {}
+    for k,g in groupby(s, key=itemgetter(0)):
+        cands[k] = []
+        for off in list(g):
+            cands[k].append(off[1].committee)
+    for c in Candidate.query.filter(Candidate.current_office_holder == True).all():
+        if cands.get(c):
+            cands[c].extend([d for d in c.committees if d not in cands[c]])
+        else:
+            cands[c] = c.committees
     year_ago = datetime.now() - timedelta(days=365)
-    for cand in cands:
+    out = []
+    for cand, comms in cands.items():
         data = {}
         data['candidate'] = cand.name
         data['pupa_id'] = cand.pupa_id
         data['active_committees'] = []
         data['inactive_committees'] = []
-        for committee in cand.committees:
-            comm = {'name': committee.name}
+        for committee in comms:
+            comm = {
+                'name': committee.name,
+                'type': committee.type
+            }
             comm['committee_url'] = committee.url
             last_q = " ".join('select sum(receipts), sum(expenditures) from \
                 report, \
@@ -185,6 +204,7 @@ def war_chest():
             # have to do this because there are some blank committee pages
             if latest_report:
                 comm['current_funds'] = latest_report.funds_end
+                comm['invest_total'] = latest_report.invest_total
                 if last_cycle_rec:
                     comm['last_cycle_receipts'] = '%.2f' % last_cycle_rec
                 else:
@@ -210,7 +230,7 @@ def war_chest():
                 else:
                     data['inactive_committees'].append(comm)
         out.append(data)
-    resp = make_response(json.dumps(out, default=dhandler))
+    resp = make_response(json.dumps(out, default=dhandler, indent=4))
     resp.headers['Content-Type'] = 'application/json'
     return resp
 

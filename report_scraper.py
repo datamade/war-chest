@@ -1,8 +1,11 @@
 import scrapelib
 from candidates_scraper import DotNetScraper
-from app import db, Candidate, Committee, Report
+from app import db, Candidate, Committee, Report, Officer
 from datetime import date, datetime
 from urlparse import parse_qs, urlparse
+from sqlalchemy.sql import or_
+from operator import itemgetter
+from itertools import groupby
 
 class ReportScraper(DotNetScraper):
     def __init__(self,
@@ -37,7 +40,7 @@ class ReportScraper(DotNetScraper):
                 reports = page.xpath("//tr[starts-with(@class, '%s')]" % self.report_row)
                 for report in reports:
                     report_data = {}
-                    raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).text
+                    raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).xpath('.//text()')
                     if raw_period:
                         report_data['period_from'], report_data['period_to'] = self._parse_period(raw_period)
                     date_filed = report.find("td[@headers='ctl00_ContentPlaceHolder1_thFiled']/span").text
@@ -50,30 +53,37 @@ class ReportScraper(DotNetScraper):
                         report_data['type'] = detailed.text
                         detail_url = detailed.attrib['href']
                         report_data['detail_url'] = detail_url
-                        print detail_url
-                        report_id = parse_qs(urlparse(detail_url).query).get('id')
-                        if report_id:
-                            report_detail = self.lxmlize(detail_url)
-                            funds_start = report_detail.xpath("//span[@id='%s']" % self.detail_funds_start)
-                            # TODO: Looks like there are Pre-Election reports are formatted differently
-                            # Need to be able to get funding data from all report formats
-                            if funds_start:
-                                report_data['funds_start'] = self._clean_float(funds_start[0].text)
-                            funds_end = report_detail.xpath("//span[@id='%s']" % self.detail_funds_end)
-                            if funds_end:
-                                report_data['funds_end'] = self._clean_float(funds_end[0].text)
-                            expenditures = report_detail.xpath("//span[@id='%s']" % self.detail_expend)
-                            if expenditures:
-                                report_data['expenditures'] = self._clean_float(expenditures[0].text)
-                            receipts = report_detail.xpath("//span[@id='%s']" % self.detail_receipts)
-                            if receipts:
-                                report_data['receipts'] = self._clean_float(receipts[0].text)
-                    else:
-                        detailed = report.find("td[@headers='%s']/span" % self.report_type_cell)
-                        raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).text
-                        if raw_period:
-                            report_data['period_from'], report_data['period_to'] = self._parse_period(raw_period)
-                        report_data['type'] = detailed.text
+                        qs = parse_qs(urlparse(detail_url).query)
+                        try:
+                            report_id = qs['id']
+                        except KeyError:
+                            report_id = qs['FiledDocID']
+                        report_data['id'] = report_id[0]
+                        report_detail = self.lxmlize(detail_url)
+                        funds_start = report_detail.xpath("//span[@id='%s']" % self.detail_funds_start)
+                        # TODO: Looks like there are Pre-Election reports are formatted differently
+                        # Need to be able to get funding data from all report formats
+                        if funds_start:
+                            report_data['funds_start'] = self._clean_float(funds_start[0].text)
+                        funds_end = report_detail.xpath("//span[@id='%s']" % self.detail_funds_end)
+                        if funds_end:
+                            report_data['funds_end'] = self._clean_float(funds_end[0].text)
+                        expenditures = report_detail.xpath("//span[@id='%s']" % self.detail_expend)
+                        if expenditures:
+                            report_data['expenditures'] = self._clean_float(expenditures[0].text)
+                        receipts = report_detail.xpath("//span[@id='%s']" % self.detail_receipts)
+                        if receipts:
+                            report_data['receipts'] = self._clean_float(receipts[0].text)
+                        invest_total = report_detail.xpath("//span[@id='ctl00_ContentPlaceHolder1_lblTotalInvest']")
+                        if receipts:
+                            report_data['invest_total'] = self._clean_float(invest_total[0].text)
+                    # For now skipping reports with no details page
+                    #else:
+                    #    detailed = report.find("td[@headers='%s']/span" % self.report_type_cell)
+                    #    raw_period = report.find("td[@headers='%s']/span" % self.report_period_cell).text
+                    #    if raw_period:
+                    #        report_data['period_from'], report_data['period_to'] = self._parse_period(raw_period)
+                    #    report_data['type'] = detailed.text
                     yield report_data
 
     def _grok_pages(self, start_page, committee_id):
@@ -96,16 +106,20 @@ class ReportScraper(DotNetScraper):
        return float(num)
 
     def _parse_period(self, raw_period):
+        if len(raw_period) > 1:
+            raw_period = raw_period[1]
+        else:
+            raw_period = raw_period[0]
         period = raw_period.split(' to ')
         period_to = None
         period_from = None
         if len(period) > 1:
-            f_month, f_day, f_year = period[0].split('/')
-            t_month, t_day, t_year = period[1].split('/')
+            f_month, f_day, f_year = period[0].strip().split('/')
+            t_month, t_day, t_year = period[1].strip().split('/')
             period_from = date(int(f_year), int(f_month), int(f_day))
             period_to = date(int(t_year), int(t_month), int(t_day))
         else:
-            year = raw_period.split(' ')[0]
+            year = raw_period.strip().split(' ')[0]
             try:
                 period_from = date(int(year), 1, 1)
             except ValueError:
@@ -113,17 +127,35 @@ class ReportScraper(DotNetScraper):
         return period_from, period_to
 
 if __name__ == "__main__":
-    committees = []
-    for cands in Candidate.query.filter(Candidate.current_office_holder == 1).all():
-        committees.extend(cands.committees)
     scraper = ReportScraper(retry_attempts=5)
     scraper.cache_storage = scrapelib.cache.FileCache('cache')
     scraper.cache_write_only = False
-    for committee in committees:
-        for report_data in scraper.scrape_reports(committee.url):
-            report_data['committee'] = committee
-            report = Report.query.filter_by(**report_data).first()
-            if not report:
-                report = Report(**report_data)
-                db.session.add(report)
-                db.session.commit()
+    res = db.session.query(Candidate, Officer)\
+        .filter(Officer.title.like('Chair%'))\
+        .filter(Officer.candidate_id == Candidate.id).all()
+    s = sorted(res, key=itemgetter(0))
+    cands = {}
+    for k,g in groupby(s, key=itemgetter(0)):
+        cands[k] = []
+        for off in list(g):
+            cands[k].append(off[1].committee)
+    for c in Candidate.query.filter(Candidate.current_office_holder == True).all():
+        if cands.get(c):
+            cands[c].extend([d for d in c.committees if d not in cands[c]])
+        else:
+            cands[c] = c.committees
+    for cand, comms in cands.items():
+        for committee in comms:
+            for report_data in scraper.scrape_reports(committee.url):
+                report_data['committee'] = committee
+                if report_data.get('id'):
+                    report = Report.query.get(int(report_data['id']))
+                if report:
+                    for k,v in report_data.items():
+                        setattr(report, k, v)
+                    db.session.add(report)
+                    db.session.commit()
+                else:
+                    report = Report(**report_data)
+                    db.session.add(report)
+                    db.session.commit()
