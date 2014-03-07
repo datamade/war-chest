@@ -11,6 +11,7 @@ if __name__ == "__main__":
                 c['name'] = cand.name
                 c['committee'] = comm.name
                 c['url'] = comm.url
+                c['position'] = 'In Support of Candidate'
                 dump.append(c)
         for comm in cand.committee_positions:
             if comm.committee.status == 'Active':
@@ -18,6 +19,7 @@ if __name__ == "__main__":
                 c['name'] = cand.name
                 c['committee'] = comm.committee.name
                 c['url'] = comm.committee.url
+                c['position'] = 'Candidate is %s' % comm.title
                 dump.append(c)
     out = open('dump.csv', 'wb')
     outp = csv.DictWriter(out, fieldnames=dump[0].keys())
