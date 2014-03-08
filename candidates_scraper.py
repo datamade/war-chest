@@ -1,216 +1,132 @@
-import scrapelib
-import json
+import requests
+from app import db, Candidate, Committee
+from urllib import urlencode
+from urlparse import urlparse, parse_qs
 import lxml.html
-import xmltodict
-import traceback
-from collections import defaultdict
-import datetime
 
-class DotNetScraper(scrapelib.Scraper) :
-    def __init__(self,
-                 raise_errors=True,
-                 requests_per_minute=60,
-                 follow_robots=True,
-                 retry_attempts=0,
-                 retry_wait_seconds=5,
-                 header_func=None,
-                 data_row_xpath=None,
-                 base_url=None,
-                 date_format='%m/%d/%Y'):
-
+class CandidateScraper(object):
+    def __init__(self, base_url, params):
         self.base_url = base_url
-        self.date_format=date_format
-        self.data_row_xpath=data_row_xpath
-        super(DotNetScraper, self).__init__(raise_errors,
-                                            requests_per_minute,
-                                            follow_robots,
-                                            retry_attempts,
-                                            retry_wait_seconds,
-                                            header_func)
+        self.params = params
+        self.session = requests.Session()
 
     def lxmlize(self, url, payload=None):
         if payload :
-            entry = self.urlopen(url, 'POST', payload)
+            entry = self.session.post(url, 'POST', payload)
         else :
-            entry = self.urlopen(url)
-        page = lxml.html.fromstring(entry)
-        page.make_links_absolute(url)
+            entry = self.session.get(url)
+        if entry.status_code is 200:
+            page = lxml.html.fromstring(entry.content)
+            page.make_links_absolute(url)
+        else:
+            page = None
         return page
 
-    def sessionSecrets(self, page) :
+    def scrape_candidates(self):
+        for page in self._grok_pages():
+            if page is not None:
+                table_rows = page.xpath('//tr[starts-with(@class, "SearchListTableRow")]')
+                for row in table_rows:
+                    data = {}
+                    data['name'] = ' '.join(row.find('td[@headers="ctl00_ContentPlaceHolder1_thCandidateName"]/').xpath('.//text()'))
+                    data['url'] = row.find('td[@headers="ctl00_ContentPlaceHolder1_thCandidateName"]/a').attrib['href']
+                    data['address'] = ' '.join(row.find('td[@headers="ctl00_ContentPlaceHolder1_thCandidateAddress"]/').xpath('.//text()'))
+                    data['party'] = ' '.join(row.find('td[@headers="ctl00_ContentPlaceHolder1_thParty"]/').xpath('.//text()'))
+                    data['office'] = ' '.join(row.find('td[@headers="ctl00_ContentPlaceHolder1_thOffice"]/').xpath('.//text()'))
+                    parsed = urlparse(data['url'])
+                    data['id'] = parse_qs(parsed.query)['ID'][0]
+                    committees = []
+                    for committee in self.scrape_committees(data['url']):
+                        if committee is not None:
+                            committees.append(committee)
+                    yield data, committees
+            else:
+                yield None, None
 
-        payload = {}
-        #print page.xpath("//input[@name='__EVENTARGUMENT']/@value")
-        payload['__EVENTARGUMENT'] = None
-        payload['__VIEWSTATE'] = page.xpath("//input[@name='__VIEWSTATE']/@value")[0]
-        payload['__EVENTVALIDATION'] = page.xpath("//input[@name='__EVENTVALIDATION']/@value")[0]
-
-        return(payload)
-
-    def parseDataTable(self, table):
-        """
-        Legistar uses the same kind of data table in a number of
-        places. This will return a list of dictionaries using the
-        table headers as keys.
-        """
-        headers = table.xpath('.//th')
-        rows = table.xpath(self.data_row_xpath)
-
-
-        keys = {}
-        for index, header in enumerate(headers):
-            keys[index] = '\n'.join(header.xpath('.//text()')).replace('&nbsp;', ' ').strip()
-
-        for row in rows:
-          try:
-            data = defaultdict(lambda : None)
-
-            for index, field in enumerate(row.xpath("./td")):
-                key = keys[index]
-                value = '\n'.join(field.xpath('.//text()')).replace('&nbsp;', ' ').strip()
-
-                try:
-                    value = datetime.datetime.strptime(value, self.date_format)
-                except ValueError:
-                    pass
-
-                # Is it a link?
-                address = None
-                link = field.xpath('.//a')
-                if len(link) > 0 :
-                    address = self._get_link_address(link[0])
-                if address is not None:
-                    value = {'label': value, 'url': address}
-
-                data[key] = value
-
-            yield data, keys, row
-
-          except Exception as e:
-            print 'Problem parsing row:'
-            print row
-            print traceback.format_exc()
-            raise e
-
-    def _get_link_address(self, link):
-        # If the link doesn't start with a #, then it'll send the browser
-        # somewhere, and we should use the href value directly.
-        href = link.get('href')
-        if href is not None and href != self.base_url :
-          return href
-
-        # If it does start with a hash, then it causes some sort of action
-        # and we should check the onclick handler.
+    def scrape_committees(self, url):
+        page = self.lxmlize(url)
+        if page is not None:
+            table = page.xpath('//table[@id="ctl00_ContentPlaceHolder1_tblCommitteeInformation"]')[0]
+            table_rows = table.xpath('tr[starts-with(@class, "SearchListTableRow")]')
+            if table is not None:
+                for row in table_rows:
+                    data = {}
+                    data['name'] = ' '.join(row.find('td[@class="tdCandDetailCommitteeName"]/').xpath('.//text()'))
+                    data['url'] = row.find('td[@class="tdCandDetailCommitteeName"]/a').attrib['href']
+                    data['address'] = ' '.join(row.find('td[@class="tdCandDetailCommitteeAddress"]/').xpath('.//text()'))
+                    data['status'] = ' '.join(row.find('td[@class="tdCandDetailCommitteeStatus"]/').xpath('.//text()'))
+                    ids = row.find('td[@class="tdCandDetailCommitteeID"]/').xpath('.//text()')
+                    for i in ids:
+                        if 'State' in i:
+                            data['state_id'] = i.split(' ')[1]
+                        elif 'Local' in i:
+                            data['local_id'] = i.split(' ')[1]
+                    parsed = urlparse(data['url'])
+                    data['id'] = parse_qs(parsed.query)['id'][0]
+                    detail = self.lxmlize(data['url'])
+                    type = detail.xpath('//span[@id="ctl00_ContentPlaceHolder1_lblTypeOfCommittee"]')
+                    if type:
+                        data['type'] = detail[0].text
+                    yield data
+            else:
+                yield None
         else:
-          onclick = link.get('onclick')
-          if onclick is not None and 'open(' in onclick :
-            return self.base_url + onclick.split("'")[1]
+            yield None
 
-        # Otherwise, we don't know how to find the address.
-        return None
+    def _grok_pages(self):
+        query_string = urlencode(self.params)
+        url = '%s?%s' % (self.base_url, query_string)
+        page = self.lxmlize(url)
+        page_counter = page.xpath("//span[@id='ctl00_ContentPlaceHolder1_lbRecordsInfo']")[0].text
+        if page_counter:
+            page_count = (int(page_counter.split(' ')[-1]) / 10)
+            for page_num in range(page_count):
+                self.params['pageindex'] = page_num
+                qs = urlencode(self.params)
+                url = '%s?%s' % (self.base_url, qs)
+                yield self.lxmlize(url)
+        else:
+            yield page
 
-
-class CandidateScraper(DotNetScraper) :
-    def __init__(self,
-                 raise_errors=True,
-                 requests_per_minute=60,
-                 follow_robots=True,
-                 retry_attempts=0,
-                 retry_wait_seconds=5,
-                 header_func=None) :
-        base_url='http://www.elections.il.gov/campaigndisclosure/'
-        data_row_xpath=".//tr[starts-with(@class, 'SearchListTableRow')]"
-        super(CandidateScraper, self).__init__(raise_errors,
-                                               requests_per_minute,
-                                               follow_robots,
-                                               retry_attempts,
-                                               retry_wait_seconds,
-                                               header_func,
-                                               data_row_xpath,
-                                               base_url)
-
-
-    def candidate_box(self, page) :
-        table = page.xpath("//table[@class='SearchPanel']")[0]
-        spans = table.xpath(".//span[starts-with(@id, 'ctl00_ContentPlaceHolder1_')]")
-
-        d = defaultdict(lambda : None)
-        for span in spans :
-            k = span.get('id').split('ctl00_ContentPlaceHolder1_lbl')[1]
-            v = '\n'.join(span.xpath('.//text()')).replace('&nbsp;', ' ').strip()
-            d[k] = v
-        
-        return d
-
-
-
-
-
-def candidate_pages() :
-    candidates_page_url = 'http://www.elections.il.gov/CampaignDisclosure/CandidateDetail.aspx?ID=%s'
-
-    blank_pages = 0
-    election_id = 1
-    last_candidate = False
-    while not last_candidate :
-        url = candidates_page_url % election_id
-        response = s.lxmlize(url)
-
-        if 'SearchListTableRow' in lxml.html.tostring(response) :
-            blank_pages = 0
-            yield election_id, url, response 
-        else :
-            blank_pages += 1
-            if blank_pages > 50 :
-                last_candidate = True
-
-        election_id += 1
-
-if __name__ == '__main__':
-    s = CandidateScraper(requests_per_minute=60,
-                         follow_robots=True,
-                         raise_errors=False,
-                         retry_attempts=0)
- 
-    s.cache_storage = scrapelib.cache.FileCache('cache')
-    s.cache_write_only = False
-    candidates = []
-    for election_id, url, page in candidate_pages() :
-        print election_id
-        candidate = {}
-        candidate['url'] = url
-        candidate['Candidate ID'] = election_id
-        candidate.update(s.candidate_box(page))
- 
- 
-        candidate['results'] = []
-        candidate_results_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCandidateResults']")[0]
-        for result, _, _ in s.parseDataTable(candidate_results_table) :
-            candidate['results'].append(dict(result))
- 
-        candidate['committees'] = []
-        committee_table = page.xpath("//table[@id='ctl00_ContentPlaceHolder1_tblCommitteeInformation']")[0]
-        for committee, _, _ in s.parseDataTable(committee_table) :
-            committee['url'] = committee['Committee Name']['url']
-            committee['Committee Name'] = committee['Committee Name']['label']
-            committee_ids = committee['ID'].split('\n')
-            for committee_id in committee_ids :
-                if 'State' in committee_id :
-                    committee['State ID'] = committee_id.split()[-1]
-                elif 'Local' in committee_id :
-                    committee['Local ID'] = committee_id.split()[-1]
-                elif 'Committee ID' in committee_id :
-                    committee['Committee ID'] = committee_id.split()[-1]
-            del committee['ID']
-            candidate['committees'].append(dict(committee))
-        candidates.append(candidate)
- 
- 
-    with open('candidates.json', 'w') as outfile :
-      json.dump(candidates, 
-                outfile, 
-                sort_keys=True, 
-                indent=4, 
-                separators=(',', ': '))
-           
-
+if __name__ == "__main__":
+    from app import db, Committee
+    base_url = 'http://www.elections.state.il.us/CampaignDisclosure/CandidateSearch.aspx'
+    params = {
+        'chkFairCampNo': 'False',
+        'chkFairCampYes': 'False',
+        'ddlAddressSearchType': 'Starts with',
+        'ddlCanDistrictType': 'All Types',
+        'ddlCanElectType': 'All Types',
+        'ddlCanOffice': 'All Offices',
+        'ddlCanParty': 'All Parties',
+        'ddlCitySearchType': 'Starts with',
+        'ddlFirstNameSearchType': 'Starts with',
+        'ddlLastNameSearchType': 'Starts with',
+        'ddlOrderBy': 'Last Name - A to Z',
+        'txtCity': 'Chicago',
+    }
+    scraper = CandidateScraper(base_url, params)
+    for candidate, committees in scraper.scrape_candidates():
+        # Save to DB and maybe write as JSON?
+        if candidate is not None:
+            cand = db.session.query(Candidate).get(int(candidate['id']))
+            if cand:
+                for k,v in candidate.items():
+                    setattr(cand, k, v)
+            else:
+                cand = Candidate(**candidate)
+            for committee in committees:
+                comm = db.session.query(Committee).get(int(committee['id']))
+                if comm:
+                    for k,v in committee.items():
+                        setattr(comm, k, v)
+                    db.session.add(comm)
+                    db.session.commit()
+                else:
+                    comm = Committee(**committee)
+                    db.session.add(comm)
+                    db.session.commit()
+                cand.committees.append(comm)
+            db.session.add(cand)
+            db.session.commit()
+            print cand.committees

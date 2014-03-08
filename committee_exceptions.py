@@ -39,7 +39,24 @@ def add_exceptions():
     latasha = Candidate.query.get(15655)
     seventeenth = Committee.query.get(16229)
     latasha.committees.append(seventeenth)
-    db.session.add(latasha)
+    
+    # Add Carrie Austin Friends of 34th ward org
+    carrie = Candidate.query.get(9448)
+    friends = Committee.query.get(11885)
+    carrie.committees.append(friends)
+    db.session.add(carrie)
+    
+    # Add Cardenas 12th ward book comm
+    cardenas = Candidate.query.get(18060)
+    book_comm = Committee.query.get(21647)
+    cardenas.committees.append(book_comm)
+    db.session.add(cardenas)
+    
+    # Add Sawyer 6th ward org
+    sawyer = Candidate.query.get(25044)
+    sixth = Committee.query.get(24149)
+    sawyer.committees.append(sixth)
+    db.session.add(sawyer)
     db.session.commit()
     return None
 

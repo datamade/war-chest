@@ -27,7 +27,7 @@ if __name__ == "__main__":
                     c['total_assets'] = None
                 dump.append(c)
         for comm in cand.committee_positions:
-            if comm.committee.status == 'Active':
+            if comm.committee.status == 'Active' and 'chair' in comm.title.lower():
                 c = OrderedDict()
                 c['name'] = cand.name
                 c['committee'] = comm.committee.name
