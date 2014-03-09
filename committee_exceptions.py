@@ -108,7 +108,12 @@ def remove_exceptions():
     for office in michelle.committee_positions:
         if office.committee == evans_comm:
             michelle.committee_positions.remove(office)
-    db.session.add_all([latasha, pat, tom, scott, ricardo, michelle])
+    emma = Candidate.query.get(15421)
+    ike_comm = Committee.query.get(25741)
+    for office in emma.committee_positions:
+        if office.committee == ike_comm:
+            michelle.committee_positions.remove(office)
+    db.session.add_all([latasha, pat, tom, scott, ricardo, michelle, emma])
     db.session.commit()
     return None
 
