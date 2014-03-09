@@ -12,7 +12,6 @@ if __name__ == "__main__":
                 c['name'] = cand.name
                 c['committee'] = comm.name
                 c['url'] = comm.url
-                c['position'] = 'In Support of Candidate'
                 rep = Report.query.filter(Report.committee_id == comm.id)\
                     .filter(or_(Report.type.like('Quarterly%'), 
                             Report.type.like('D-2 Semiannual Report%')))\
@@ -32,7 +31,6 @@ if __name__ == "__main__":
                 c['name'] = cand.name
                 c['committee'] = comm.committee.name
                 c['url'] = comm.committee.url
-                c['position'] = 'Candidate is %s' % comm.title
                 rep = Report.query.filter(Report.committee_id == comm.committee.id)\
                     .filter(or_(Report.type.like('Quarterly%'), 
                             Report.type.like('D-2 Semiannual Report%')))\
@@ -45,7 +43,8 @@ if __name__ == "__main__":
                     c['current_funds'] = None
                     c['invest_total'] = None
                     c['total_assets'] = None
-                dump.append(c)
+                if c not in dump:
+                    dump.append(c)
     out = open('dump.csv', 'wb')
     outp = csv.DictWriter(out, fieldnames=dump[0].keys())
     outp.writeheader()

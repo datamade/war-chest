@@ -1,7 +1,11 @@
 {
     "Ameya Pawar": {
         "cand_id": 24270, 
-        "officer_ids": []
+        "officer_ids": [
+            4591, 
+            5031, 
+            5032
+        ]
     }, 
     "Anthony Beale": {
         "cand_id": 14117, 
