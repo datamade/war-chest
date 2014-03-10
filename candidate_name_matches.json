@@ -1,0 +1,2684 @@
+[
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=633", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 633
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2649", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 2649
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10638", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 10638
+            }
+        ], 
+        "cand_id": 633, 
+        "cand_name": "Patrick J O'Connor", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=4353", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 440
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=5119", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 554
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17441", 
+                "match_name": "Patrick J. O'Connor", 
+                "match_id": 3494
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23699", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 5077
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2059", 
+                "match_name": "Joseph A Moore", 
+                "match_id": 2059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14751", 
+                "match_name": "Joseph A Moore", 
+                "match_id": 14751
+            }
+        ], 
+        "cand_id": 2059, 
+        "cand_name": "Joseph A Moore", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=6380", 
+                "match_name": "Joseph Moore", 
+                "match_id": 710
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2489", 
+                "match_name": "Edward M Burke", 
+                "match_id": 2489
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10616", 
+                "match_name": "Edward M Burke", 
+                "match_id": 10616
+            }
+        ], 
+        "cand_id": 2489, 
+        "cand_name": "Edward M Burke", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=499", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 159
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=552", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 179
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=7920", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 1195
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16891", 
+                "match_name": "Edward M Burke", 
+                "match_id": 3330
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2614", 
+                "match_name": "Regner \"Ray\" Suarez", 
+                "match_id": 2614
+            }
+        ], 
+        "cand_id": 2614, 
+        "cand_name": "Regner \"Ray\" Suarez", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=6555", 
+                "match_name": "Regner \"Ray\" Suarez", 
+                "match_id": 750
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14968", 
+                "match_name": "Regner \"Ray\" Suarez", 
+                "match_id": 2974
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=633", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 633
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2649", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 2649
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10638", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 10638
+            }
+        ], 
+        "cand_id": 2649, 
+        "cand_name": "Patrick J O'Connor", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=4353", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 440
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=5119", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 554
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17441", 
+                "match_name": "Patrick J. O'Connor", 
+                "match_id": 3494
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23699", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 5077
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=4623", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 4623
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10268", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 10268
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25044", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 25044
+            }
+        ], 
+        "cand_id": 4623, 
+        "cand_name": "Roderick T Sawyer", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17000", 
+                "match_name": "Roderick Sawyer", 
+                "match_id": 3353
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=7187", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 7187
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14810", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 14810
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24348", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 24348
+            }
+        ], 
+        "cand_id": 7187, 
+        "cand_name": "Ricardo Munoz", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1448
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1449
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2291
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2292
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23767", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 5099
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=7853", 
+                "match_name": "Margaret Laurino", 
+                "match_id": 7853
+            }
+        ], 
+        "cand_id": 7853, 
+        "cand_name": "Margaret Laurino", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11463", 
+                "match_name": "Margaret Laurino", 
+                "match_id": 2129
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=8848", 
+                "match_name": "Walter Burnett, Jr", 
+                "match_id": 8848
+            }
+        ], 
+        "cand_id": 8848, 
+        "cand_name": "Walter Burnett, Jr", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11489", 
+                "match_name": "Walter Burnett, Jr", 
+                "match_id": 2138
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=9045", 
+                "match_name": "Michael Chandler", 
+                "match_id": 9045
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10495", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 10495
+            }
+        ], 
+        "cand_id": 9045, 
+        "cand_name": "Michael Chandler", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=10930", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 2016
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=10930", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 2017
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=12107", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 2401
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23005", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 4814
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24464", 
+                "match_name": "Michael D Chandler", 
+                "match_id": 5323
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=9425", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 9425
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20429", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 20429
+            }
+        ], 
+        "cand_id": 9425, 
+        "cand_name": "Michael R Zalewski", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14156", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 2769
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19167", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 3716
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=9448", 
+                "match_name": "Carrie M Austin", 
+                "match_id": 9448
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10472", 
+                "match_name": "Carrie M Austin", 
+                "match_id": 10472
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17575", 
+                "match_name": "Carrie Austin", 
+                "match_id": 17575
+            }
+        ], 
+        "cand_id": 9448, 
+        "cand_name": "Carrie M Austin", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=197", 
+                "match_name": "Carrie Austin", 
+                "match_id": 83
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=4623", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 4623
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10268", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 10268
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25044", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 25044
+            }
+        ], 
+        "cand_id": 10268, 
+        "cand_name": "Roderick T Sawyer", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17000", 
+                "match_name": "Roderick Sawyer", 
+                "match_id": 3353
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=9448", 
+                "match_name": "Carrie M Austin", 
+                "match_id": 9448
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10472", 
+                "match_name": "Carrie M Austin", 
+                "match_id": 10472
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17575", 
+                "match_name": "Carrie Austin", 
+                "match_id": 17575
+            }
+        ], 
+        "cand_id": 10472, 
+        "cand_name": "Carrie M Austin", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=197", 
+                "match_name": "Carrie Austin", 
+                "match_id": 83
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2489", 
+                "match_name": "Edward M Burke", 
+                "match_id": 2489
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10616", 
+                "match_name": "Edward M Burke", 
+                "match_id": 10616
+            }
+        ], 
+        "cand_id": 10616, 
+        "cand_name": "Edward M Burke", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=499", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 159
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=552", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 179
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=7920", 
+                "match_name": "Edward M. Burke", 
+                "match_id": 1195
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16891", 
+                "match_name": "Edward M Burke", 
+                "match_id": 3330
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=633", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 633
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2649", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 2649
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10638", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 10638
+            }
+        ], 
+        "cand_id": 10638, 
+        "cand_name": "Patrick J O'Connor", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=4353", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 440
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=5119", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 554
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17441", 
+                "match_name": "Patrick J. O'Connor", 
+                "match_id": 3494
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23699", 
+                "match_name": "Patrick J O'Connor", 
+                "match_id": 5077
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10981", 
+                "match_name": "Daniel S Solis", 
+                "match_id": 10981
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14815", 
+                "match_name": "Daniel S Solis", 
+                "match_id": 14815
+            }
+        ], 
+        "cand_id": 10981, 
+        "cand_name": "Daniel S Solis", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=12260", 
+                "match_name": "Daniel Solis", 
+                "match_id": 2441
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=15421", 
+                "match_name": "Daniel Solis", 
+                "match_id": 3109
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=12655", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 12655
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14712", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 14712
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23923", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 23923
+            }
+        ], 
+        "cand_id": 12655, 
+        "cand_name": "Roberto Maldonado", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=13825", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 13825
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14778", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 14778
+            }
+        ], 
+        "cand_id": 13825, 
+        "cand_name": "Leslie A Hairston", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14216", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 2783
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14992", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 2988
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=13838", 
+                "match_name": "Rey Colon", 
+                "match_id": 13838
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18825", 
+                "match_name": "Rey Colon", 
+                "match_id": 18825
+            }
+        ], 
+        "cand_id": 13838, 
+        "cand_name": "Rey Colon", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14238", 
+                "match_name": "Rey Colon", 
+                "match_id": 2789
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17037", 
+                "match_name": "Rey Colon", 
+                "match_id": 3369
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18010", 
+                "match_name": "Rey Colon", 
+                "match_id": 3631
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18012", 
+                "match_name": "Rey Colon", 
+                "match_id": 3633
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14059", 
+                "match_name": "John A Pope", 
+                "match_id": 14059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14788", 
+                "match_name": "John A Pope", 
+                "match_id": 14788
+            }
+        ], 
+        "cand_id": 14059, 
+        "cand_name": "John A Pope", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14501", 
+                "match_name": "John A Pope", 
+                "match_id": 2868
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19733", 
+                "match_name": "John A Pope", 
+                "match_id": 3858
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14117", 
+                "match_name": "Anthony Beale", 
+                "match_id": 14117
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14783", 
+                "match_name": "Anthony Beale", 
+                "match_id": 14783
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26614", 
+                "match_name": "Anthony A Beale", 
+                "match_id": 26614
+            }
+        ], 
+        "cand_id": 14117, 
+        "cand_name": "Anthony Beale", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14125", 
+                "match_name": "James A Balcer", 
+                "match_id": 14125
+            }
+        ], 
+        "cand_id": 14125, 
+        "cand_name": "James A Balcer", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17491", 
+                "match_name": "James Balcer", 
+                "match_id": 3500
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14150", 
+                "match_name": "Lona Lane", 
+                "match_id": 14150
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22254", 
+                "match_name": "Lona Lane", 
+                "match_id": 22254
+            }
+        ], 
+        "cand_id": 14150, 
+        "cand_name": "Lona Lane", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20015", 
+                "match_name": "Lona Lane", 
+                "match_id": 3985
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14159", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 14159
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18811", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 18811
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21905", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 21905
+            }
+        ], 
+        "cand_id": 14159, 
+        "cand_name": "Howard B Brookins, Jr", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=12655", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 12655
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14712", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 14712
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23923", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 23923
+            }
+        ], 
+        "cand_id": 14712, 
+        "cand_name": "Roberto Maldonado", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=2059", 
+                "match_name": "Joseph A Moore", 
+                "match_id": 2059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14751", 
+                "match_name": "Joseph A Moore", 
+                "match_id": 14751
+            }
+        ], 
+        "cand_id": 14751, 
+        "cand_name": "Joseph A Moore", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=6380", 
+                "match_name": "Joseph Moore", 
+                "match_id": 710
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=13825", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 13825
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14778", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 14778
+            }
+        ], 
+        "cand_id": 14778, 
+        "cand_name": "Leslie A Hairston", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14216", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 2783
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14992", 
+                "match_name": "Leslie A Hairston", 
+                "match_id": 2988
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14117", 
+                "match_name": "Anthony Beale", 
+                "match_id": 14117
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14783", 
+                "match_name": "Anthony Beale", 
+                "match_id": 14783
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26614", 
+                "match_name": "Anthony A Beale", 
+                "match_id": 26614
+            }
+        ], 
+        "cand_id": 14783, 
+        "cand_name": "Anthony Beale", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14059", 
+                "match_name": "John A Pope", 
+                "match_id": 14059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14788", 
+                "match_name": "John A Pope", 
+                "match_id": 14788
+            }
+        ], 
+        "cand_id": 14788, 
+        "cand_name": "John A Pope", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14501", 
+                "match_name": "John A Pope", 
+                "match_id": 2868
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19733", 
+                "match_name": "John A Pope", 
+                "match_id": 3858
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=7187", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 7187
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14810", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 14810
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24348", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 24348
+            }
+        ], 
+        "cand_id": 14810, 
+        "cand_name": "Ricardo Munoz", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1448
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1449
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2291
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2292
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23767", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 5099
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10981", 
+                "match_name": "Daniel S Solis", 
+                "match_id": 10981
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14815", 
+                "match_name": "Daniel S Solis", 
+                "match_id": 14815
+            }
+        ], 
+        "cand_id": 14815, 
+        "cand_name": "Daniel S Solis", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=12260", 
+                "match_name": "Daniel Solis", 
+                "match_id": 2441
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=15421", 
+                "match_name": "Daniel Solis", 
+                "match_id": 3109
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=15421", 
+                "match_name": "Emma Mitts", 
+                "match_id": 15421
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18870", 
+                "match_name": "Emma Mitts", 
+                "match_id": 18870
+            }
+        ], 
+        "cand_id": 15421, 
+        "cand_name": "Emma Mitts", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25741", 
+                "match_name": "Emma Mitts", 
+                "match_id": 5549
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=15655", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 15655
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18868", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 18868
+            }
+        ], 
+        "cand_id": 15655, 
+        "cand_name": "Latasha Thomas", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=12367", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 2462
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14699", 
+                "match_name": "Harry. Osterman", 
+                "match_id": 14699
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17080", 
+                "match_name": "Harry Osterman", 
+                "match_id": 17080
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25127", 
+                "match_name": "Harry Osterman", 
+                "match_id": 25127
+            }
+        ], 
+        "cand_id": 17080, 
+        "cand_name": "Harry Osterman", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17208", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 17208
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22228", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 22228
+            }
+        ], 
+        "cand_id": 17208, 
+        "cand_name": "JoAnn Thompson", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16425", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 3228
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17271", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 17271
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24898", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 24898
+            }
+        ], 
+        "cand_id": 17271, 
+        "cand_name": "Deborah L Graham", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16505", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 3247
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23266", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 4966
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17429", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 17429
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25244", 
+                "match_name": "Jason Ervin", 
+                "match_id": 25244
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25572", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 25572
+            }
+        ], 
+        "cand_id": 17429, 
+        "cand_name": "Jason C Ervin", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=15337", 
+                "match_name": "Jason Ervin", 
+                "match_id": 3089
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16671", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 3283
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20844", 
+                "match_name": "Jason Ervin", 
+                "match_id": 4237
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24663", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 5354
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17696", 
+                "match_name": "Pat Dowell", 
+                "match_id": 17696
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22238", 
+                "match_name": "Pat Dowell", 
+                "match_id": 22238
+            }
+        ], 
+        "cand_id": 17696, 
+        "cand_name": "Pat Dowell", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17880", 
+                "match_name": "Tom Tunney", 
+                "match_id": 17880
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22249", 
+                "match_name": "Tom Tunney", 
+                "match_id": 22249
+            }
+        ], 
+        "cand_id": 17880, 
+        "cand_name": "Tom Tunney", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=468", 
+                "match_name": "Tom Tunney", 
+                "match_id": 142
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17895", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 17895
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22242", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 22242
+            }
+        ], 
+        "cand_id": 17895, 
+        "cand_name": "Ariel E Reboyras", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17163", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 3409
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18128", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 3658
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18060", 
+                "match_name": "George A Cardenas", 
+                "match_id": 18060
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20689", 
+                "match_name": "George A Cardenas", 
+                "match_id": 20689
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23030", 
+                "match_name": "George Cardenas", 
+                "match_id": 23030
+            }
+        ], 
+        "cand_id": 18060, 
+        "cand_name": "George A Cardenas", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17290", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3459
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18408", 
+                "match_name": "George Cardenas", 
+                "match_id": 3684
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19429", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3796
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=21647", 
+                "match_name": "George Cardenas", 
+                "match_id": 4370
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14159", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 14159
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18811", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 18811
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21905", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 21905
+            }
+        ], 
+        "cand_id": 18811, 
+        "cand_name": "Howard B Brookins, Jr", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=13838", 
+                "match_name": "Rey Colon", 
+                "match_id": 13838
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18825", 
+                "match_name": "Rey Colon", 
+                "match_id": 18825
+            }
+        ], 
+        "cand_id": 18825, 
+        "cand_name": "Rey Colon", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14238", 
+                "match_name": "Rey Colon", 
+                "match_id": 2789
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17037", 
+                "match_name": "Rey Colon", 
+                "match_id": 3369
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18010", 
+                "match_name": "Rey Colon", 
+                "match_id": 3631
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18012", 
+                "match_name": "Rey Colon", 
+                "match_id": 3633
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=15655", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 15655
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18868", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 18868
+            }
+        ], 
+        "cand_id": 18868, 
+        "cand_name": "Latasha Thomas", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=12367", 
+                "match_name": "Latasha Thomas", 
+                "match_id": 2462
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=15421", 
+                "match_name": "Emma Mitts", 
+                "match_id": 15421
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18870", 
+                "match_name": "Emma Mitts", 
+                "match_id": 18870
+            }
+        ], 
+        "cand_id": 18870, 
+        "cand_name": "Emma Mitts", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25741", 
+                "match_name": "Emma Mitts", 
+                "match_id": 5549
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20044", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 20044
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25077", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 25077
+            }
+        ], 
+        "cand_id": 20044, 
+        "cand_name": "Matt O'Shea", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=376", 
+                "match_name": "Matthew J O'Shea", 
+                "match_id": 118
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16329", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 3194
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=9425", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 9425
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20429", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 20429
+            }
+        ], 
+        "cand_id": 20429, 
+        "cand_name": "Michael R Zalewski", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=14156", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 2769
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19167", 
+                "match_name": "Michael R Zalewski", 
+                "match_id": 3716
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20516", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 20516
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22276", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 22276
+            }
+        ], 
+        "cand_id": 20516, 
+        "cand_name": "Brendan Reilly", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19263", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 3746
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23931", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 5158
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25117", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 5384
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18060", 
+                "match_name": "George A Cardenas", 
+                "match_id": 18060
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20689", 
+                "match_name": "George A Cardenas", 
+                "match_id": 20689
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23030", 
+                "match_name": "George Cardenas", 
+                "match_id": 23030
+            }
+        ], 
+        "cand_id": 20689, 
+        "cand_name": "George A Cardenas", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17290", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3459
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18408", 
+                "match_name": "George Cardenas", 
+                "match_id": 3684
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19429", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3796
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=21647", 
+                "match_name": "George Cardenas", 
+                "match_id": 4370
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20877", 
+                "match_name": "Michele Smith", 
+                "match_id": 20877
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24971", 
+                "match_name": "Michele Smith", 
+                "match_id": 24971
+            }
+        ], 
+        "cand_id": 20877, 
+        "cand_name": "Michele Smith", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19682", 
+                "match_name": "Michele E Smith", 
+                "match_id": 3845
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=21283", 
+                "match_name": "Michele E Smith", 
+                "match_id": 4347
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23895", 
+                "match_name": "Michele Smith", 
+                "match_id": 5147
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20952", 
+                "match_name": "James Cappleman", 
+                "match_id": 20952
+            }
+        ], 
+        "cand_id": 20952, 
+        "cand_name": "James Cappleman", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19747", 
+                "match_name": "James Cappleman", 
+                "match_id": 3864
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21027", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 21027
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26495", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 26495
+            }
+        ], 
+        "cand_id": 21027, 
+        "cand_name": "Nicholas Sposato", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19830", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 3902
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24204", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 5265
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21059", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 21059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22261", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 22261
+            }
+        ], 
+        "cand_id": 21059, 
+        "cand_name": "Willie B Cochran", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19880", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 3918
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21073", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 21073
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26388", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 26388
+            }
+        ], 
+        "cand_id": 21073, 
+        "cand_name": "Scott Waguespack", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19898", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 3936
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23767", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 5100
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21169", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 21169
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=28294", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 28294
+            }
+        ], 
+        "cand_id": 21169, 
+        "cand_name": "Michelle A Harris", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=553", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 182
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22093", 
+                "match_name": "Michelle. Harris", 
+                "match_id": 4400
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24362", 
+                "match_name": "Michelle A. Harris", 
+                "match_id": 5297
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21287", 
+                "match_name": "Toni L Foulkes", 
+                "match_id": 21287
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22262", 
+                "match_name": "Toni L Foulkes", 
+                "match_id": 22262
+            }
+        ], 
+        "cand_id": 21287, 
+        "cand_name": "Toni L Foulkes", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20107", 
+                "match_name": "Toni Foulkes", 
+                "match_id": 4045
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22910", 
+                "match_name": "Toni Foulkes", 
+                "match_id": 4748
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14159", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 14159
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18811", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 18811
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21905", 
+                "match_name": "Howard B Brookins, Jr", 
+                "match_id": 21905
+            }
+        ], 
+        "cand_id": 21905, 
+        "cand_name": "Howard B Brookins, Jr", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21906", 
+                "match_name": "Deb Mell", 
+                "match_id": 21906
+            }
+        ], 
+        "cand_id": 21906, 
+        "cand_name": "Deb Mell", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21946", 
+                "match_name": "Mary O'Connor", 
+                "match_id": 21946
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25565", 
+                "match_name": "Mary O'Connor", 
+                "match_id": 25565
+            }
+        ], 
+        "cand_id": 21946, 
+        "cand_name": "Mary O'Connor", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20673", 
+                "match_name": "Mary E O'Connor", 
+                "match_id": 4150
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22609", 
+                "match_name": "Mary E O'Connor", 
+                "match_id": 4627
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22068", 
+                "match_name": "Proco \"Joe\" Moreno", 
+                "match_id": 22068
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24885", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 24885
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26344", 
+                "match_name": "Proco \"Joe\" Moreno III", 
+                "match_id": 26344
+            }
+        ], 
+        "cand_id": 22068, 
+        "cand_name": "Proco \"Joe\" Moreno", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20809", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 4215
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17208", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 17208
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22228", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 22228
+            }
+        ], 
+        "cand_id": 22228, 
+        "cand_name": "JoAnn Thompson", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16425", 
+                "match_name": "JoAnn Thompson", 
+                "match_id": 3228
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17696", 
+                "match_name": "Pat Dowell", 
+                "match_id": 17696
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22238", 
+                "match_name": "Pat Dowell", 
+                "match_id": 22238
+            }
+        ], 
+        "cand_id": 22238, 
+        "cand_name": "Pat Dowell", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17895", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 17895
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22242", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 22242
+            }
+        ], 
+        "cand_id": 22242, 
+        "cand_name": "Ariel E Reboyras", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17163", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 3409
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18128", 
+                "match_name": "Ariel E Reboyras", 
+                "match_id": 3658
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17880", 
+                "match_name": "Tom Tunney", 
+                "match_id": 17880
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22249", 
+                "match_name": "Tom Tunney", 
+                "match_id": 22249
+            }
+        ], 
+        "cand_id": 22249, 
+        "cand_name": "Tom Tunney", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=468", 
+                "match_name": "Tom Tunney", 
+                "match_id": 142
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14150", 
+                "match_name": "Lona Lane", 
+                "match_id": 14150
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22254", 
+                "match_name": "Lona Lane", 
+                "match_id": 22254
+            }
+        ], 
+        "cand_id": 22254, 
+        "cand_name": "Lona Lane", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20015", 
+                "match_name": "Lona Lane", 
+                "match_id": 3985
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21059", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 21059
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22261", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 22261
+            }
+        ], 
+        "cand_id": 22261, 
+        "cand_name": "Willie B Cochran", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19880", 
+                "match_name": "Willie B Cochran", 
+                "match_id": 3918
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21287", 
+                "match_name": "Toni L Foulkes", 
+                "match_id": 21287
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22262", 
+                "match_name": "Toni L Foulkes", 
+                "match_id": 22262
+            }
+        ], 
+        "cand_id": 22262, 
+        "cand_name": "Toni L Foulkes", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20107", 
+                "match_name": "Toni Foulkes", 
+                "match_id": 4045
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22910", 
+                "match_name": "Toni Foulkes", 
+                "match_id": 4748
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20516", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 20516
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22276", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 22276
+            }
+        ], 
+        "cand_id": 22276, 
+        "cand_name": "Brendan Reilly", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19263", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 3746
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23931", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 5158
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25117", 
+                "match_name": "Brendan Reilly", 
+                "match_id": 5384
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22298", 
+                "match_name": "Will Burns", 
+                "match_id": 22298
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25573", 
+                "match_name": "Will Burns", 
+                "match_id": 25573
+            }
+        ], 
+        "cand_id": 22298, 
+        "cand_name": "Will Burns", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20749", 
+                "match_name": "Will Burns", 
+                "match_id": 4186
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22392", 
+                "match_name": "Bob Fioretti", 
+                "match_id": 22392
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25571", 
+                "match_name": "Bob Fioretti", 
+                "match_id": 25571
+            }
+        ], 
+        "cand_id": 22392, 
+        "cand_name": "Bob Fioretti", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=18060", 
+                "match_name": "George A Cardenas", 
+                "match_id": 18060
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20689", 
+                "match_name": "George A Cardenas", 
+                "match_id": 20689
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23030", 
+                "match_name": "George Cardenas", 
+                "match_id": 23030
+            }
+        ], 
+        "cand_id": 23030, 
+        "cand_name": "George Cardenas", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17290", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3459
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=18408", 
+                "match_name": "George Cardenas", 
+                "match_id": 3684
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19429", 
+                "match_name": "George A Cardenas", 
+                "match_id": 3796
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=21647", 
+                "match_name": "George Cardenas", 
+                "match_id": 4370
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=12655", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 12655
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14712", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 14712
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=23923", 
+                "match_name": "Roberto Maldonado", 
+                "match_id": 23923
+            }
+        ], 
+        "cand_id": 23923, 
+        "cand_name": "Roberto Maldonado", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24270", 
+                "match_name": "Ameya Pawar", 
+                "match_id": 24270
+            }
+        ], 
+        "cand_id": 24270, 
+        "cand_name": "Ameya Pawar", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22524", 
+                "match_name": "Ameya Pawar", 
+                "match_id": 4597
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23607", 
+                "match_name": "Ameya Pawar", 
+                "match_id": 5037
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23607", 
+                "match_name": "Ameya Pawar", 
+                "match_id": 5038
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=7187", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 7187
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14810", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 14810
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24348", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 24348
+            }
+        ], 
+        "cand_id": 24348, 
+        "cand_name": "Ricardo Munoz", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1448
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=9487", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 1449
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2291
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=11832", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 2292
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23767", 
+                "match_name": "Ricardo Munoz", 
+                "match_id": 5099
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22068", 
+                "match_name": "Proco \"Joe\" Moreno", 
+                "match_id": 22068
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24885", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 24885
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26344", 
+                "match_name": "Proco \"Joe\" Moreno III", 
+                "match_id": 26344
+            }
+        ], 
+        "cand_id": 24885, 
+        "cand_name": "Proco Joe Moreno", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20809", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 4215
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17271", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 17271
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24898", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 24898
+            }
+        ], 
+        "cand_id": 24898, 
+        "cand_name": "Deborah L Graham", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16505", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 3247
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23266", 
+                "match_name": "Deborah L Graham", 
+                "match_id": 4966
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24911", 
+                "match_name": "John Arena", 
+                "match_id": 24911
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26616", 
+                "match_name": "John Arena", 
+                "match_id": 26616
+            }
+        ], 
+        "cand_id": 24911, 
+        "cand_name": "John Arena", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22749", 
+                "match_name": "John Arena", 
+                "match_id": 4667
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24368", 
+                "match_name": "John Arena", 
+                "match_id": 5301
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20877", 
+                "match_name": "Michele Smith", 
+                "match_id": 20877
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24971", 
+                "match_name": "Michele Smith", 
+                "match_id": 24971
+            }
+        ], 
+        "cand_id": 24971, 
+        "cand_name": "Michele Smith", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19682", 
+                "match_name": "Michele E Smith", 
+                "match_id": 3845
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=21283", 
+                "match_name": "Michele E Smith", 
+                "match_id": 4347
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23895", 
+                "match_name": "Michele Smith", 
+                "match_id": 5147
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=4623", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 4623
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=10268", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 10268
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25044", 
+                "match_name": "Roderick T Sawyer", 
+                "match_id": 25044
+            }
+        ], 
+        "cand_id": 25044, 
+        "cand_name": "Roderick T Sawyer", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=17000", 
+                "match_name": "Roderick Sawyer", 
+                "match_id": 3353
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=20044", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 20044
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25077", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 25077
+            }
+        ], 
+        "cand_id": 25077, 
+        "cand_name": "Matt O'Shea", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=376", 
+                "match_name": "Matthew J O'Shea", 
+                "match_id": 118
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16329", 
+                "match_name": "Matt O'Shea", 
+                "match_id": 3194
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=14699", 
+                "match_name": "Harry. Osterman", 
+                "match_id": 14699
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17080", 
+                "match_name": "Harry Osterman", 
+                "match_id": 17080
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25127", 
+                "match_name": "Harry Osterman", 
+                "match_id": 25127
+            }
+        ], 
+        "cand_id": 25127, 
+        "cand_name": "Harry Osterman", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25135", 
+                "match_name": "Debra Silverstein", 
+                "match_id": 25135
+            }
+        ], 
+        "cand_id": 25135, 
+        "cand_name": "Debra Silverstein", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22982", 
+                "match_name": "Debra. Silverstein", 
+                "match_id": 4802
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17429", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 17429
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25244", 
+                "match_name": "Jason Ervin", 
+                "match_id": 25244
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25572", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 25572
+            }
+        ], 
+        "cand_id": 25244, 
+        "cand_name": "Jason Ervin", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=15337", 
+                "match_name": "Jason Ervin", 
+                "match_id": 3089
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16671", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 3283
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20844", 
+                "match_name": "Jason Ervin", 
+                "match_id": 4237
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24663", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 5354
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25249", 
+                "match_name": "Tim Cullerton", 
+                "match_id": 25249
+            }
+        ], 
+        "cand_id": 25249, 
+        "cand_name": "Tim Cullerton", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25487", 
+                "match_name": "Marty Quinn", 
+                "match_id": 25487
+            }
+        ], 
+        "cand_id": 25487, 
+        "cand_name": "Marty Quinn", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23282", 
+                "match_name": "Marty Quinn", 
+                "match_id": 4983
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21946", 
+                "match_name": "Mary O'Connor", 
+                "match_id": 21946
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25565", 
+                "match_name": "Mary O'Connor", 
+                "match_id": 25565
+            }
+        ], 
+        "cand_id": 25565, 
+        "cand_name": "Mary O'Connor", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20673", 
+                "match_name": "Mary E O'Connor", 
+                "match_id": 4150
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22609", 
+                "match_name": "Mary E O'Connor", 
+                "match_id": 4627
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22392", 
+                "match_name": "Bob Fioretti", 
+                "match_id": 22392
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25571", 
+                "match_name": "Bob Fioretti", 
+                "match_id": 25571
+            }
+        ], 
+        "cand_id": 25571, 
+        "cand_name": "Bob Fioretti", 
+        "off_matches": []
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=17429", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 17429
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25244", 
+                "match_name": "Jason Ervin", 
+                "match_id": 25244
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25572", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 25572
+            }
+        ], 
+        "cand_id": 25572, 
+        "cand_name": "Jason C Ervin", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=15337", 
+                "match_name": "Jason Ervin", 
+                "match_id": 3089
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=16671", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 3283
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20844", 
+                "match_name": "Jason Ervin", 
+                "match_id": 4237
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24663", 
+                "match_name": "Jason C Ervin", 
+                "match_id": 5354
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22298", 
+                "match_name": "Will Burns", 
+                "match_id": 22298
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=25573", 
+                "match_name": "Will Burns", 
+                "match_id": 25573
+            }
+        ], 
+        "cand_id": 25573, 
+        "cand_name": "Will Burns", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20749", 
+                "match_name": "Will Burns", 
+                "match_id": 4186
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=22068", 
+                "match_name": "Proco \"Joe\" Moreno", 
+                "match_id": 22068
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24885", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 24885
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26344", 
+                "match_name": "Proco \"Joe\" Moreno III", 
+                "match_id": 26344
+            }
+        ], 
+        "cand_id": 26344, 
+        "cand_name": "Proco \"Joe\" Moreno III", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=20809", 
+                "match_name": "Proco Joe Moreno", 
+                "match_id": 4215
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21073", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 21073
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26388", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 26388
+            }
+        ], 
+        "cand_id": 26388, 
+        "cand_name": "Scott Waguespack", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19898", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 3936
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=23767", 
+                "match_name": "Scott Waguespack", 
+                "match_id": 5100
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21027", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 21027
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26495", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 26495
+            }
+        ], 
+        "cand_id": 26495, 
+        "cand_name": "Nicholas Sposato", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=19830", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 3902
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24204", 
+                "match_name": "Nicholas Sposato", 
+                "match_id": 5265
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=24911", 
+                "match_name": "John Arena", 
+                "match_id": 24911
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=26616", 
+                "match_name": "John Arena", 
+                "match_id": 26616
+            }
+        ], 
+        "cand_id": 26616, 
+        "cand_name": "John Arena", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22749", 
+                "match_name": "John Arena", 
+                "match_id": 4667
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24368", 
+                "match_name": "John Arena", 
+                "match_id": 5301
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=27778", 
+                "match_name": "Natashia Holmes", 
+                "match_id": 27778
+            }
+        ], 
+        "cand_id": 27778, 
+        "cand_name": "Natashia Holmes", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25284", 
+                "match_name": "Natashia L Holmes", 
+                "match_id": 5394
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=25332", 
+                "match_name": "Natashia L Holmes", 
+                "match_id": 5400
+            }
+        ]
+    }, 
+    {
+        "cand_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=21169", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 21169
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CandidateDetail.aspx?ID=28294", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 28294
+            }
+        ], 
+        "cand_id": 28294, 
+        "cand_name": "Michelle A Harris", 
+        "off_matches": [
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=553", 
+                "match_name": "Michelle A Harris", 
+                "match_id": 182
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=22093", 
+                "match_name": "Michelle. Harris", 
+                "match_id": 4400
+            }, 
+            {
+                "match_url": "http://www.elections.state.il.us/CampaignDisclosure/CommitteeDetail.aspx?id=24362", 
+                "match_name": "Michelle A. Harris", 
+                "match_id": 5297
+            }
+        ]
+    }
+]

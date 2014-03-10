@@ -30,23 +30,26 @@ cand_comm = db.Table('cand_comm',
 class Person(db.Model):
     __tablename__ = 'person'
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), index=True)
+    pupa_id = db.Column(db.String(255), index=True)
+    current_office_holder = db.Column(db.Boolean, default=False)
     candidacies = db.relationship('Candidate', backref='person', lazy='dynamic')
     committee_positions = db.relationship('Officer', backref='person', lazy='dynamic')
     
     def __repr__(self):
-        return '<Person %r>' % self.candidacies.first().name
+        return '<Person %r>' % self.name
 
 class Candidate(db.Model):
     __tablename__ = 'candidate'
     id = db.Column(db.Integer, primary_key=True)
-    pupa_id = db.Column(db.String(255), index=True)
     name = db.Column(db.String(255), index=True)
     address = db.Column(db.String(255), index=True)
     party = db.Column(db.String(15), index=True)
     url = db.Column(db.String(255))
     office = db.Column(db.String(255), index=True)
-    person_id = db.Column(db.Integer, db.ForeignKey('person.id'), index=True)
     current_office_holder = db.Column(db.Boolean, default=False)
+    pupa_id = db.Column(db.String(255), index=True)
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'), index=True)
     committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')
 

@@ -1,5 +1,5 @@
 import scrapelib
-from app import db, Candidate, Committee, Report, Officer
+from app import db, Candidate, Committee, Report, Officer, Person
 from datetime import date, datetime
 from urlparse import parse_qs, urlparse
 from sqlalchemy.sql import or_
@@ -233,32 +233,24 @@ if __name__ == "__main__":
     scraper = ReportScraper(retry_attempts=5)
     scraper.cache_storage = scrapelib.cache.FileCache('cache')
     scraper.cache_write_only = False
-    res = db.session.query(Candidate, Officer)\
-        .filter(Officer.title.like('Chair%'))\
-        .filter(Officer.candidate_id == Candidate.id).all()
-    s = sorted(res, key=itemgetter(0))
-    cands = {}
-    for k,g in groupby(s, key=itemgetter(0)):
-        cands[k] = []
-        for off in list(g):
-            cands[k].append(off[1].committee)
-    for c in Candidate.query.filter(Candidate.current_office_holder == True).all():
-        if cands.get(c):
-            cands[c].extend([d for d in c.committees if d not in cands[c]])
-        else:
-            cands[c] = c.committees
-    for cand, comms in cands.items():
-        for committee in comms:
-            for report_data in scraper.scrape_reports(committee.url):
-                report_data['committee'] = committee
-                if report_data.get('id'):
-                    report = Report.query.get(int(report_data['id']))
-                if report:
-                    for k,v in report_data.items():
-                        setattr(report, k, v)
-                    db.session.add(report)
-                    db.session.commit()
-                else:
-                    report = Report(**report_data)
-                    db.session.add(report)
-                    db.session.commit()
+    people = db.session.query(Person).all()
+    committees = []
+    for person in people:
+        for cand in person.candidacies.all():
+            committees.extend([c for c in cand.committees])
+        for off in person.committee_positions.all():
+            committees.append(off.committee)
+    for committee in committees:
+        for report_data in scraper.scrape_reports(committee.url):
+            report_data['committee'] = committee
+            if report_data.get('id'):
+                report = Report.query.get(int(report_data['id']))
+            if report:
+                for k,v in report_data.items():
+                    setattr(report, k, v)
+                db.session.add(report)
+                db.session.commit()
+            else:
+                report = Report(**report_data)
+                db.session.add(report)
+                db.session.commit()

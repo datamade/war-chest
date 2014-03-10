@@ -11,12 +11,6 @@ def add_pdf_reports():
     db.session.commit()
 
 def add_exceptions():
-    # Add proco Joe committee
-    joe = Candidate.query.get(24885)
-    first = Committee.query.get(24042)
-    joe.committees.append(first)
-    db.session.add(joe)
-    
     # Add Emma Mitts committee
     emma = Candidate.query.get(15421)
     new_37 = Committee.query.get(18118)
@@ -40,84 +34,15 @@ def add_exceptions():
     seventeenth = Committee.query.get(16229)
     latasha.committees.append(seventeenth)
     
-    # Add Carrie Austin Friends of 34th ward org
-    carrie = Candidate.query.get(9448)
-    friends = Committee.query.get(11885)
-    carrie.committees.append(friends)
-    db.session.add(carrie)
-    
-    # Add Cardenas 12th ward book comm
-    cardenas = Candidate.query.get(18060)
-    book_comm = Committee.query.get(21647)
-    cardenas.committees.append(book_comm)
-    db.session.add(cardenas)
-    
-    # Add Sawyer 6th ward org
-    sawyer = Candidate.query.get(25044)
-    sixth = Committee.query.get(24149)
-    sawyer.committees.append(sixth)
-    db.session.add(sawyer)
-    
     # Add Laurino 39th ward org
     laurino = Candidate.query.get(7853)
     thirty = Committee.query.get(11463)
     laurino.committees.append(thirty)
     db.session.add(laurino)
     
-    # Add O'Shea 19th ward org
-    oshea = Candidate.query.get(25077)
-    nineteenth = Committee.query.get(376)
-    oshea.committees.append(nineteenth)
-    db.session.add(oshea)
-    
-    # Add Michele Smith Committeeman committee
-    michele = Candidate.query.get(24971)
-    comm_comm = Committee.query.get(23895)
-    michele.committees.append(comm_comm)
-    db.session.add(michele)
-    db.session.commit()
-    return None
-
-def remove_exceptions():
-    latasha = Candidate.query.get(15655)
-    terry_comm = Committee.query.get(12367)
-    for office in latasha.committee_positions:
-        if office.committee == terry_comm:
-            latasha.committee_positions.remove(office)
-    pat = Candidate.query.get(2649)
-    judge_comm = Committee.query.get(23699)
-    for office in pat.committee_positions:
-        if office.committee == judge_comm:
-            pat.committee_positions.remove(office)
-    tom = Candidate.query.get(17880)
-    quig_comm = Committee.query.get(6301)
-    for office in tom.committee_positions:
-        if office.committee == quig_comm:
-            tom.committee_positions.remove(office)
-    scott = Candidate.query.get(21073)
-    ricardo = Candidate.query.get(7187)
-    reform_comm = Committee.query.get(23767)
-    for office in scott.committee_positions:
-        if office.committee == reform_comm:
-            scott.committee_positions.remove(office)
-    for office in ricardo.committee_positions:
-        if office.committee == reform_comm:
-            ricardo.committee_positions.remove(office)
-    michelle = Candidate.query.get(21169)
-    evans_comm = Committee.query.get(24362)
-    for office in michelle.committee_positions:
-        if office.committee == evans_comm:
-            michelle.committee_positions.remove(office)
-    emma = Candidate.query.get(15421)
-    ike_comm = Committee.query.get(25741)
-    for office in emma.committee_positions:
-        if office.committee == ike_comm:
-            michelle.committee_positions.remove(office)
-    db.session.add_all([latasha, pat, tom, scott, ricardo, michelle, emma])
     db.session.commit()
     return None
 
 if __name__ == "__main__":
     add_pdf_reports()
     add_exceptions()
-    remove_exceptions()

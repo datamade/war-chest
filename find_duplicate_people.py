@@ -1,59 +1,73 @@
-from app import db, Candidate, Officer
+from app import db, Candidate, Officer, Person
 import csv
+import json
 from collections import OrderedDict
 from operator import itemgetter
+from sqlalchemy import or_
 
 if __name__ == "__main__":
-    names = [c.name for c in Candidate.query.filter(Candidate.current_office_holder == True).all()]
+    cands = [c for c in Candidate.query.filter(Candidate.current_office_holder == True).all()]
     suffixes = ['Jr', 'II', 'III']
-    cand_match_table = []
-    officer_match_table = []
-    for name in names:
+    match_table = []
+    for cand in cands:
         # Try to get last name
-        last_name = name.split(' ')[-1]
-        first_name = name.split(' ')[0]
+        last_name = cand.name.split(' ')[-1]
+        first_name = cand.name.split(' ')[0]
         if last_name in suffixes:
-            last_name = name.split(' ')[-2]
+            last_name = cand.name.split(' ')[-2]
         cand_matches = Candidate.query\
             .filter(Candidate.name.like('%%%s%%' % last_name))\
             .filter(Candidate.name.like('%s%%' % first_name)).all()
+        d = {
+            'cand_id': cand.id, 
+            'cand_name': cand.name,
+            'cand_matches': [],
+            'off_matches': [],
+        }
         for match in cand_matches:
-            d = OrderedDict()
+            m = {}
             if match.name == 'Michael J Zalewski'\
                 or match.name == 'Michael John Zalewski'\
-                or match.name == "Matthew G O'Shea":
+                or match.name == "Matthew G O'Shea"\
+                or match.name == "Patrick O'Connor":
                 continue
-            d['query'] = '%s %s' % (first_name, last_name)
-            d['candidate_name_match'] = match.name
-            d['candidate_office'] = match.office
-            d['candidate_url'] = match.url
-            if d not in cand_matches:
-                cand_match_table.append(d)
+            m['match_id'] = match.id
+            m['match_name'] = match.name
+            m['match_url'] = match.url
+            d['cand_matches'].append(m)
         off_matches = Officer.query\
             .filter(Officer.name.like('%%%s%%' % last_name))\
             .filter(Officer.name.like('%s%%' % first_name)).all()
         for match in off_matches:
-            d = OrderedDict()
+            m = {}
             if match.name == 'Michael J Zalewski'\
                 or match.name == 'Michael John Zalewski'\
-                or match.name == "Matthew G O'Shea":
+                or match.name == "Matthew G O'Shea"\
+                or match.name == "Patrick O'Connor":
                 continue
-            d['query'] = '%s %s' % (first_name, last_name)
-            d['officer_name_match'] = match.name
-            d['officer_title'] = match.title
-            d['committee_url'] = match.committee.url
-            if d not in off_matches:
-                officer_match_table.append(d)
-    cand_match_table = sorted(cand_match_table, key=itemgetter('query'))
-    officer_match_table = sorted(officer_match_table, key=itemgetter('query'))
-    outp = open('candidate_name_matches.csv', 'wb')
-    writer = csv.DictWriter(outp, fieldnames=cand_match_table[0].keys())
-    writer.writeheader()
-    writer.writerows(cand_match_table)
+            m['match_id'] = match.id
+            m['match_name'] = match.name
+            m['match_url'] = match.committee.url
+            d['off_matches'].append(m)
+        match_table.append(d)
+    outp = open('candidate_name_matches.json', 'wb')
+    outp.write(json.dumps(match_table, indent=4))
     outp.close()
-
-    outp = open('officer_name_matches.csv', 'wb')
-    writer = csv.DictWriter(outp, fieldnames=officer_match_table[0].keys())
-    writer.writeheader()
-    writer.writerows(officer_match_table)
-    outp.close()
+    for cand in match_table:
+        cand_records = [Candidate.query.get(cand['cand_id'])]
+        off_records = []
+        for c in cand['cand_matches']:
+            cand_records.append(Candidate.query.get(c['match_id']))
+        for o in cand['off_matches']:
+            off_records.append(Officer.query.get(o['match_id']))
+        person = db.session.query(Person)\
+            .filter(Person.candidacies.any(Candidate.id == cand['cand_id'])).first()
+        if not person:
+            person = Person(
+                candidacies=cand_records, 
+                committee_positions=off_records,
+                name=cand_records[0].name,
+                current_office_holder=True,
+                pupa_id=cand_records[0].pupa_id)
+            db.session.add(person)
+            db.session.commit()

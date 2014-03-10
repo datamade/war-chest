@@ -8,8 +8,7 @@ sqlite3 war_chest.db < officeholders.sql
 python committee_scraper.py
 python officer_scraper.py
 
-# 4. Find cases where people seem to have more than one candidate record
-# and dump them out for manual matching
+# 4. Map Candidates and Officers to Persons
 python find_duplicate_people.py
 
-
+# 5. Scrape Reports
