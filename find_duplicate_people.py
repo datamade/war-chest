@@ -19,7 +19,7 @@ if __name__ == "__main__":
             .filter(Candidate.name.like('%s%%' % first_name)).all()
         for match in cand_matches:
             d = OrderedDict()
-            if match.name == 'Michael J Zalewski' or name == 'Michael John Zalewski':
+            if match.name == 'Michael J Zalewski' or match.name == 'Michael John Zalewski':
                 continue
             d['query'] = '%s %s' % (first_name, last_name)
             d['candidate_name_match'] = match.name
@@ -32,7 +32,7 @@ if __name__ == "__main__":
             .filter(Officer.name.like('%s%%' % first_name)).all()
         for match in off_matches:
             d = OrderedDict()
-            if match.name == 'Michael J Zalewski' or name == 'Michael John Zalewski':
+            if match.name == 'Michael J Zalewski' or match.name == 'Michael John Zalewski':
                 continue
             d['query'] = '%s %s' % (first_name, last_name)
             d['officer_name_match'] = match.name
