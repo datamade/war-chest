@@ -46,11 +46,13 @@ if __name__ == "__main__":
     scraper.cache_write_only = False
     comms = db.session.query(Committee).all()
     for comm in comms:
-        officers = scraper.scrape_officers(comm.id)
+        new_officers = scraper.scrape_officers(comm.id)
+        existing_officers = [c.as_dict() for c in comm.officers.all()]
         for officer in officers:
-            o = Officer(**officer)
-            setattr(o, 'committee', comm)
-            db.session.add(o)
-            db.session.commit()
+            if officer not in existing_officers:
+                o = Officer(**officer)
+                setattr(o, 'committee', comm)
+                db.session.add(o)
+                db.session.commit()
 
 

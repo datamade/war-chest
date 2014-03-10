@@ -65,9 +65,11 @@ class CandidateScraper(object):
                     data['id'] = parse_qs(parsed.query)['id'][0]
                     detail = self.lxmlize(data['url'])
                     type = detail.xpath('//span[@id="ctl00_ContentPlaceHolder1_lblTypeOfCommittee"]')
-                    if type:
+                    if type and type.lower().strip() == 'active':
                         data['type'] = detail[0].text
-                    yield data
+                        yield data
+                    else:
+                        yield None
             else:
                 yield None
         else:
@@ -129,4 +131,4 @@ if __name__ == "__main__":
                 cand.committees.append(comm)
             db.session.add(cand)
             db.session.commit()
-            print cand.committees
+            print cand, cand.committees

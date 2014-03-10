@@ -27,6 +27,14 @@ cand_comm = db.Table('cand_comm',
    db.Column('committee_id', db.Integer, db.ForeignKey('committee.id')),
 )
 
+class Person(db.Model):
+    __tablename__ = 'person'
+    id = db.Column(db.Integer, primary_key=True)
+    candidacies = db.relationship('Candidate', backref='person', lazy='dynamic')
+    
+    def __repr__(self):
+        return '<Person %r>' % self.candidacies.first().name
+
 class Candidate(db.Model):
     __tablename__ = 'candidate'
     id = db.Column(db.Integer, primary_key=True)
@@ -37,6 +45,7 @@ class Candidate(db.Model):
     url = db.Column(db.String(255))
     office = db.Column(db.String(255), index=True)
     committee_positions = db.relationship('Officer', backref='candidate', lazy='dynamic')
+    person_id = db.Column(db.Integer, db.ForeignKey('person.id'), index=True)
     current_office_holder = db.Column(db.Boolean, default=False)
     committees = db.relationship('Committee', backref=db.backref('candidates',lazy='dynamic'), secondary=lambda: cand_comm)
     election_results = db.relationship('ElectionResult', backref='candidate', lazy='dynamic')

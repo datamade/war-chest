@@ -45,7 +45,7 @@ if __name__ == "__main__":
                     c['total_assets'] = None
                 if c not in dump:
                     dump.append(c)
-    out = open('dump.csv', 'wb')
+    out = open('candidate_committees.csv', 'wb')
     outp = csv.DictWriter(out, fieldnames=dump[0].keys())
     outp.writeheader()
     outp.writerows(dump)
