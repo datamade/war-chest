@@ -139,29 +139,28 @@ dhandler = lambda obj: obj.isoformat() if isinstance(obj, date) or isinstance(ob
 
 @app.route('/war-chest/')
 def war_chest():
-    res = db.session.query(Candidate, Officer)\
-        .filter(Officer.title.like('Chair%'))\
-        .filter(Officer.candidate_id == Candidate.id).all()
-    s = sorted(res, key=itemgetter(0))
-    cands = {}
-    for k,g in groupby(s, key=itemgetter(0)):
-        cands[k] = []
-        for off in list(g):
-            cands[k].append(off[1].committee)
-    for c in Candidate.query.filter(Candidate.current_office_holder == True).all():
-        if cands.get(c):
-            cands[c].extend([d for d in c.committees if d not in cands[c]])
-        else:
-            cands[c] = c.committees
+    people = Person.query.all()
     year_ago = datetime.now() - timedelta(days=365)
     out = []
-    for cand, comms in cands.items():
+    for person in people:
+        committees = []
+        for cand in person.candidacies.all():
+            for comm in cand.committees:
+                if comm.status == 'Active' and comm not in committees:
+                    committees.append(comm)
+        for comm in person.committee_positions.all():
+            if comm.committee.status == 'Active'\
+                and 'chair' in comm.title.lower()\
+                and comm.committee.type\
+                and  not comm.committee.type.lower() == 'candidate'\
+                and comm not in committees:
+                committees.append(comm.committee)
         data = {}
-        data['candidate'] = cand.name
-        data['pupa_id'] = cand.pupa_id
+        data['candidate'] = person.name
+        data['pupa_id'] = person.pupa_id
         data['active_committees'] = []
         data['inactive_committees'] = []
-        for committee in comms:
+        for committee in committees:
             comm = {
                 'name': committee.name,
                 'type': committee.type
