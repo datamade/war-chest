@@ -28,7 +28,7 @@ update candidate set current_office_holder=1, pupa_id = "ocd-person/a7d453e2-3d8
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946c6d38-3cec-11e3-8a24-22000a971dca" where name = "Pat Dowell";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/9467ec4a-3cec-11e3-8a24-22000a971dca" where name = "Tom Tunney";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946c0ca8-3cec-11e3-8a24-22000a971dca" where name = "Ariel E Reboyras";
-update candidate set current_office_holder=1, pupa_id = "ocd-person/946c8bc4-3cec-11e3-8a24-22000a971dca" where name = "George A Cardenas";
+update candidate set current_office_holder=1, pupa_id = "ocd-person/946c8bc4-3cec-11e3-8a24-22000a971dca" where name = "George A Cardenas" or name = "George Cardenas";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94676e00-3cec-11e3-8a24-22000a971dca" where name = "Brendan Reilly";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/9469e1b2-3cec-11e3-8a24-22000a971dca" where name = "James Cappleman";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946b17e4-3cec-11e3-8a24-22000a971dca" where name = "Nicholas Sposato";
@@ -39,7 +39,7 @@ update candidate set current_office_holder=1, pupa_id = "ocd-person/9468a810-3ce
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94668e40-3cec-11e3-8a24-22000a971dca" where name = "Toni L Foulkes";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94680ae0-3cec-11e3-8a24-22000a971dca" where name = "Roberto Maldonado";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94672ecc-3cec-11e3-8a24-22000a971dca" where name = "Ameya Pawar";
-update candidate set current_office_holder=1, pupa_id = "ocd-person/09dd6654-3f85-11e3-b895-22000a971dca" where name = "Proco Joe Moreno";
+update candidate set current_office_holder=1, pupa_id = "ocd-person/09dd6654-3f85-11e3-b895-22000a971dca" where name = "Proco Joe Moreno" or name = 'Proco "Joe" Moreno III' or name == 'Proco "Joe" Moreno';
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946a7b9a-3cec-11e3-8a24-22000a971dca" where name = "Deborah L Graham";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/9467ad66-3cec-11e3-8a24-22000a971dca" where name = "John Arena";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946c4e7a-3cec-11e3-8a24-22000a971dca" where name = "Michele Smith";
@@ -47,7 +47,7 @@ update candidate set current_office_holder=1, pupa_id = "ocd-person/946b365c-3ce
 update candidate set current_office_holder=1, pupa_id = "ocd-person/9466f114-3cec-11e3-8a24-22000a971dca" where name = "Matt O'Shea";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946bee80-3cec-11e3-8a24-22000a971dca" where name = "Harry Osterman";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946a1f1a-3cec-11e3-8a24-22000a971dca" where name = "Debra Silverstein";
-update candidate set current_office_holder=1, pupa_id = "ocd-person/946888e4-3cec-11e3-8a24-22000a971dca" where name = "Jason Ervin";
+update candidate set current_office_holder=1, pupa_id = "ocd-person/946888e4-3cec-11e3-8a24-22000a971dca" where name = "Jason Ervin" or name = "Jason C Ervin";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946af976-3cec-11e3-8a24-22000a971dca" where name = "Tim Cullerton";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/94678cf0-3cec-11e3-8a24-22000a971dca" where name = "Marty Quinn";
 update candidate set current_office_holder=1, pupa_id = "ocd-person/946868c8-3cec-11e3-8a24-22000a971dca" where name = "Mary O'Connor";

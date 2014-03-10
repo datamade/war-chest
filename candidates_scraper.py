@@ -3,6 +3,7 @@ from app import db, Candidate, Committee
 from urllib import urlencode
 from urlparse import urlparse, parse_qs
 import lxml.html
+import time
 
 class CandidateScraper(object):
     def __init__(self, base_url, params):
@@ -65,11 +66,9 @@ class CandidateScraper(object):
                     data['id'] = parse_qs(parsed.query)['id'][0]
                     detail = self.lxmlize(data['url'])
                     type = detail.xpath('//span[@id="ctl00_ContentPlaceHolder1_lblTypeOfCommittee"]')
-                    if type and type.lower().strip() == 'active':
+                    if type:
                         data['type'] = detail[0].text
-                        yield data
-                    else:
-                        yield None
+                    yield data
             else:
                 yield None
         else:
@@ -104,7 +103,7 @@ if __name__ == "__main__":
         'ddlCitySearchType': 'Starts with',
         'ddlFirstNameSearchType': 'Starts with',
         'ddlLastNameSearchType': 'Starts with',
-        'ddlOrderBy': 'Last Name - A to Z',
+        'ddlOrderBy': 'Last Name - Z to A',
         'txtCity': 'Chicago',
     }
     scraper = CandidateScraper(base_url, params)

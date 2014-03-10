@@ -48,7 +48,7 @@ if __name__ == "__main__":
     for comm in comms:
         new_officers = scraper.scrape_officers(comm.id)
         existing_officers = [c.as_dict() for c in comm.officers.all()]
-        for officer in officers:
+        for officer in new_officers:
             if officer not in existing_officers:
                 o = Officer(**officer)
                 setattr(o, 'committee', comm)
