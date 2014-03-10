@@ -81,16 +81,43 @@ class CandidateScraper(object):
         page_counter = page.xpath("//span[@id='ctl00_ContentPlaceHolder1_lbRecordsInfo']")[0].text
         if page_counter:
             page_count = (int(page_counter.split(' ')[-1]) / 10)
-            for page_num in range(page_count):
-                self.params['pageindex'] = page_num
+            if page_count > 0:
+                for page_num in range(page_count):
+                    self.params['pageindex'] = page_num
+                    qs = urlencode(self.params)
+                    url = '%s?%s' % (self.base_url, qs)
+            else:
                 qs = urlencode(self.params)
                 url = '%s?%s' % (self.base_url, qs)
-                yield self.lxmlize(url)
+            yield self.lxmlize(url)
         else:
             yield page
 
+def save_candidate(candidate, committees):
+    if candidate is not None:
+        cand = db.session.query(Candidate).get(int(candidate['id']))
+        if cand:
+            for k,v in candidate.items():
+                setattr(cand, k, v)
+        else:
+            cand = Candidate(**candidate)
+        for committee in committees:
+            comm = db.session.query(Committee).get(int(committee['id']))
+            if comm:
+                for k,v in committee.items():
+                    setattr(comm, k, v)
+                db.session.add(comm)
+                db.session.commit()
+            else:
+                comm = Committee(**committee)
+                db.session.add(comm)
+                db.session.commit()
+            cand.committees.append(comm)
+        db.session.add(cand)
+        db.session.commit()
+        print cand, cand.committees
+
 if __name__ == "__main__":
-    from app import db, Committee
     base_url = 'http://www.elections.state.il.us/CampaignDisclosure/CandidateSearch.aspx'
     params = {
         'chkFairCampNo': 'False',
@@ -108,26 +135,11 @@ if __name__ == "__main__":
     }
     scraper = CandidateScraper(base_url, params)
     for candidate, committees in scraper.scrape_candidates():
-        # Save to DB and maybe write as JSON?
-        if candidate is not None:
-            cand = db.session.query(Candidate).get(int(candidate['id']))
-            if cand:
-                for k,v in candidate.items():
-                    setattr(cand, k, v)
-            else:
-                cand = Candidate(**candidate)
-            for committee in committees:
-                comm = db.session.query(Committee).get(int(committee['id']))
-                if comm:
-                    for k,v in committee.items():
-                        setattr(comm, k, v)
-                    db.session.add(comm)
-                    db.session.commit()
-                else:
-                    comm = Committee(**committee)
-                    db.session.add(comm)
-                    db.session.commit()
-                cand.committees.append(comm)
-            db.session.add(cand)
-            db.session.commit()
-            print cand, cand.committees
+        save_candidate(candidate, committees)
+    # Catch Proco Joe Moreno III
+    params['txtLastName'] = 'Moreno'
+    params['txtFirstName'] = 'Proco'
+    del params['txtCity']
+    scraper = CandidateScraper(base_url, params)
+    for candidate, committees in scraper.scrape_candidates():
+        save_candidate(candidate, committees)

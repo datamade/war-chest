@@ -25,7 +25,8 @@ if __name__ == "__main__":
             d['candidate_name_match'] = match.name
             d['candidate_office'] = match.office
             d['candidate_url'] = match.url
-            cand_match_table.append(d)
+            if d not in cand_matches:
+                cand_match_table.append(d)
         off_matches = Officer.query\
             .filter(Officer.name.like('%%%s%%' % last_name))\
             .filter(Officer.name.like('%s%%' % first_name)).all()
@@ -37,7 +38,8 @@ if __name__ == "__main__":
             d['officer_name_match'] = match.name
             d['officer_title'] = match.title
             d['committee_url'] = match.committee.url
-            officer_match_table.append(d)
+            if d not in off_matches:
+                officer_match_table.append(d)
     cand_match_table = sorted(cand_match_table, key=itemgetter('query'))
     officer_match_table = sorted(officer_match_table, key=itemgetter('query'))
     outp = open('candidate_name_matches.csv', 'wb')
