@@ -146,11 +146,10 @@ def war_chest():
         committees = []
         for cand in person.candidacies.all():
             for comm in cand.committees:
-                if comm.status == 'Active' and comm not in committees:
+                if comm not in committees:
                     committees.append(comm)
         for comm in person.committee_positions.all():
-            if comm.committee.status == 'Active'\
-                and 'chair' in comm.title.lower()\
+            if 'chair' in comm.title.lower()\
                 and comm.committee.type\
                 and  not comm.committee.type.lower() == 'candidate'\
                 and comm not in committees:

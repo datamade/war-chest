@@ -9,11 +9,11 @@ if __name__ == "__main__":
     for person in Person.query.all():
         for cand in person.candidacies.all():
             for comm in cand.committees:
-                if comm.status == 'Active':
-                    c = OrderedDict()
-                    c['name'] = person.name
-                    c['committee'] = comm.name
-                    c['url'] = comm.url
+                c = OrderedDict()
+                c['name'] = person.name
+                c['committee'] = comm.name
+                c['status'] = comm.status
+                c['url'] = comm.url
                    #rep = Report.query.filter(Report.committee_id == comm.id)\
                    #    .filter(or_(Report.type.like('Quarterly%'), 
                    #            Report.type.like('D-2 Semiannual Report%')))\
@@ -26,16 +26,16 @@ if __name__ == "__main__":
                    #    c['current_funds'] = None
                    #    c['invest_total'] = None
                    #    c['total_assets'] = None
-                    if c not in dump:
-                        dump.append(c)
+                if c not in dump:
+                    dump.append(c)
         for comm in person.committee_positions.all():
-            if comm.committee.status == 'Active'\
-                and 'chair' in comm.title.lower()\
+            if 'chair' in comm.title.lower()\
                 and comm.committee.type\
                 and  not comm.committee.type.lower() == 'candidate':
                 c = OrderedDict()
                 c['name'] = person.name
                 c['committee'] = comm.committee.name
+                c['status'] = comm.committee.status
                 c['url'] = comm.committee.url
                #rep = Report.query.filter(Report.committee_id == comm.committee.id)\
                #    .filter(or_(Report.type.like('Quarterly%'), 
