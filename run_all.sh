@@ -11,4 +11,8 @@ python officer_scraper.py
 # 4. Map Candidates and Officers to Persons
 python find_duplicate_people.py
 
-# 5. Scrape Reports
+# 5. Add committee exceptions
+python committee_exceptions.py
+
+# 6. Scrape Reports
+python report_scraper.py

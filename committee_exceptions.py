@@ -1,4 +1,4 @@
-from app import db, Candidate, Committee, Report
+from app import db, Candidate, Committee, Report, Person
 
 def add_pdf_reports():
     the_7th = Report.query.get(522550)
@@ -43,6 +43,18 @@ def add_exceptions():
     db.session.commit()
     return None
 
+def remove_exceptions():
+    ricardo = Person.query.filter(Person.name == 'Ricardo Munoz').first()
+    reform_comm = Committee.query.get(23767)
+    positions = ricardo.committee_positions.all()
+    for off in positions:
+        if off.committee == reform_comm:
+            positions.remove(off)
+    ricardo.committee_positions = positions
+    db.session.add(ricardo)
+    db.session.commit()
+
 if __name__ == "__main__":
     add_pdf_reports()
     add_exceptions()
+    remove_exceptions()
