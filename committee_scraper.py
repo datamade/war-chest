@@ -64,7 +64,7 @@ if __name__ == "__main__":
         'ddlNameSearchType': 'Contains',
         'ddlOrderBy': 'Committee Name - A to Z',
         'ddlState': 'IL',
-        'chkActive': 'True',
+        'chkActive': 'False',
         'txtCity': 'Chicago'
     }
     scraper = CommitteeScraper(base_url, params)
