@@ -152,6 +152,7 @@ def war_chest():
                 and  not off.committee.type.lower() == 'candidate'\
                 and off.committee not in committees:
                 committees.append(off.committee)
+        print person, committees
         data = {}
         data['candidate'] = person.name
         data['pupa_id'] = person.pupa_id
