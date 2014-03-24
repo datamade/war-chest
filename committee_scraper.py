@@ -47,6 +47,7 @@ class IllinoisElectionScraper(scrapelib.Scraper):
         id = 1
         last = False
         while not last:
+            print self.url_pattern
             url = self.url_pattern % id
             response = self._lxmlize(url)
  
@@ -220,7 +221,7 @@ class CandidateScraper(IllinoisElectionScraper):
 
 if __name__ == "__main__":
     from app import db, Committee, Report, Officer, Candidate
-    url_pattern = '%s/CommitteeDetail.aspx?id=%s'
+    url_pattern = '/CommitteeDetail.aspx?id=%s'
     string_on_page = 'ctl00_ContentPlaceHolder1_CommitteeResultsLayout'
     scraper = CommitteeScraper(url_pattern=url_pattern, string_on_page=string_on_page)
     scraper.cache_storage = scrapelib.cache.FileCache('cache')
