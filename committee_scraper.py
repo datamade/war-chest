@@ -222,21 +222,21 @@ if __name__ == "__main__":
     from app import db, Committee, Report, Officer, Candidate
     url_pattern = '%s/CommitteeDetail.aspx?id=%s'
     string_on_page = 'ctl00_ContentPlaceHolder1_CommitteeResultsLayout'
-   #scraper = CommitteeScraper(url_pattern=url_pattern, string_on_page=string_on_page)
-   #scraper.cache_storage = scrapelib.cache.FileCache('cache')
-   #scraper.cache_write_only = False
-   #for committee in scraper.scrape_all():
-   #    # Save to DB and maybe write as JSON?
-   #    comm = db.session.query(Committee).get(int(committee['id']))
-   #    if comm:
-   #        for k,v in committee.items():
-   #            setattr(comm, k, v)
-   #        db.session.add(comm)
-   #        db.session.commit()
-   #    else:
-   #        comm = Committee(**committee)
-   #        db.session.add(comm)
-   #        db.session.commit()
+    scraper = CommitteeScraper(url_pattern=url_pattern, string_on_page=string_on_page)
+    scraper.cache_storage = scrapelib.cache.FileCache('cache')
+    scraper.cache_write_only = False
+    for committee in scraper.scrape_all():
+        # Save to DB and maybe write as JSON?
+        comm = db.session.query(Committee).get(int(committee['id']))
+        if comm:
+            for k,v in committee.items():
+                setattr(comm, k, v)
+            db.session.add(comm)
+            db.session.commit()
+        else:
+            comm = Committee(**committee)
+            db.session.add(comm)
+            db.session.commit()
     report_pattern = '/CommitteeDetail.aspx?id=%s&pageindex=%s'
     officer_pattern = '/CommitteeDetailOfficers.aspx?id=%s'
     candidate_pattern = '/CommitteeDetailCandidates.aspx?id=%s'
