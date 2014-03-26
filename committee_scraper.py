@@ -47,7 +47,6 @@ class IllinoisElectionScraper(scrapelib.Scraper):
         id = 1
         last = False
         while not last:
-            print self.url_pattern
             url = self.url_pattern % id
             response = self._lxmlize(url)
  
