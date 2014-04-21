@@ -1,7 +1,8 @@
 from flask import Flask, request, make_response
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import func, select
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.hybrid import hybrid_method
 from sqlalchemy.sql import not_, or_
 import os
 from datetime import date, datetime, timedelta
@@ -96,10 +97,31 @@ class Committee(db.Model):
         return dict([(c.name, getattr(self, c.name))
                      for c in self.__table__.columns])
 
+    @hybrid_method
+    def cycle_reports(self, start=None, end=None):
+        reports = self.reports.filter(self.status != 'Final')\
+            .filter(Report.period_from >= datetime.strptime(start, '%Y-%m-%d').date())\
+            .filter(or_(Report.generic_type.like('Quarterly'), 
+                Report.generic_type.like('D-2 Semiannual Report')))
+        if end:
+            reports = reports.filter(Report.period_to <= datetime.strptime(end, '%Y-%m-%d').date())
+        return reports
+
+    @hybrid_method
+    def cycle_totals(self, start=None, end=None):
+        report = self.cycle_reports(start, end)\
+            .order_by(Report.date_filed.desc())\
+            .first()
+        if report:
+            return report.receipts, report.expenditures
+        else:
+            return 0, 0
+
 class Report(db.Model):
     __tablename__ = 'report'
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(50), index=True)
+    generic_type = db.Column(db.String(50), index=True)
     period_from = db.Column(db.Date, index=True)
     period_to = db.Column(db.Date, index=True)
     date_filed = db.Column(db.DateTime, index=True)
@@ -139,13 +161,15 @@ dhandler = lambda obj: obj.isoformat() if isinstance(obj, date) or isinstance(ob
 
 @app.route('/war-chest/')
 def war_chest():
-    people = Person.query.all()
+    people = Person.query.filter(Person.pupa_id != None).all()
     year_ago = datetime.now() - timedelta(days=365)
     out = []
     for person in people:
         committees = []
         for cand in person.candidacies.all():
-            committees.extend([c for c in cand.committees if c not in committees])
+            for c in cand.committees:
+                if c.status != 'Final' and c not in committees:
+                    committees.append(c)
         for off in person.committee_positions.all():
             if 'chair' in off.title.lower()\
                 and off.committee.type\
@@ -163,53 +187,13 @@ def war_chest():
                 'type': committee.type
             }
             comm['committee_url'] = committee.url
-            last_q = " ".join('select sum(receipts), sum(expenditures) from \
-                report, \
-                (select replace(report.type, " (Amendment)", "") as type, \
-                period_from, period_to, committee_id, \
-                max(date_filed) as date_filed from report where \
-                committee_id = :comm_id and \
-                (type like "D-2 Semiannual Report%" or type like \
-                 "Quarterly%") group by replace(type, " (Amendment)", ""), \
-                period_from, period_to) AS M \
-                where replace(report.type, " (Amendment)", "")=M.type \
-                AND report.period_from = M.period_from \
-                AND report.period_to = M.period_to \
-                AND report.date_filed=M.date_filed \
-                AND report.committee_id=M.committee_id \
-                AND report.period_from >= :per_from and report.period_to <= \
-                :per_to;'.split())
-            current_q = " ".join('select sum(receipts), sum(expenditures) from \
-                report, \
-                (select replace(report.type, " (Amendment)", "") as type, \
-                period_from, period_to, committee_id, \
-                max(date_filed) as date_filed from report where \
-                committee_id = :comm_id and \
-                (type like "D-2 Semiannual Report%" or type like \
-                 "Quarterly%") group by replace(type, " (Amendment)", ""), \
-                period_from, period_to) AS M \
-                where replace(report.type, " (Amendment)", "")=M.type \
-                AND report.period_from = M.period_from \
-                AND report.period_to = M.period_to \
-                AND report.date_filed=M.date_filed \
-                AND report.committee_id=M.committee_id \
-                AND report.period_from >= :per_from;'.split())
             latest_report = db.session.query(Report)\
                 .filter(Report.committee_id == committee.id)\
-                .filter(or_(Report.type.like('Quarterly%'), \
-                            Report.type.like('D-2 Semiannual Report%')))\
+                .filter(or_(Report.generic_type.like('Quarterly%'), \
+                            Report.generic_type.like('D-2 Semiannual Report%')))\
                 .order_by(Report.date_filed.desc()).first()
-            last_cycle_rec, last_cycle_exp = [r for r in 
-                db.engine.execute(last_q,
-                comm_id=committee.id, 
-                per_to='2011-06-30',
-                per_from='2007-07-01')][0]
-            current_cycle_rec, current_cycle_exp = [r for r in 
-                db.engine.execute(current_q,
-                comm_id=committee.id, 
-                per_from='2011-07-01')][0]
-
-            # have to do this because there are some blank committee pages
+            last_cycle_rec, last_cycle_exp = committee.cycle_totals(start='2007-07-01', end='2011-06-30')
+            current_cycle_rec, current_cycle_exp = committee.cycle_totals(start='2011-07-01')
             if latest_report:
                 comm['current_funds'] = latest_report.funds_end
                 comm['invest_total'] = latest_report.invest_total

@@ -121,6 +121,7 @@ class ReportScraper(IllinoisElectionScraper):
                     detailed = report.find("td[@headers='ctl00_ContentPlaceHolder1_thReportType']/a")
                     if detailed is not None:
                         report_data['type'] = detailed.text
+                        report_data['generic_type'] = detailed.text.replace(' (Amendment)', '')
                         detail_url = detailed.attrib['href']
                         report_data['detail_url'] = detail_url
                         qs = parse_qs(urlparse(detail_url).query)
