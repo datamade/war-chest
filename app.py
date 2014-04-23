@@ -10,7 +10,7 @@ import json
 import requests
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
-from operator import itemgetter
+from operator import itemgetter, attrgetter
 from itertools import groupby
 
 app = Flask(__name__)
@@ -109,11 +109,15 @@ class Committee(db.Model):
 
     @hybrid_method
     def cycle_totals(self, start=None, end=None):
-        report = self.cycle_reports(start, end)\
-            .order_by(Report.date_filed.desc())\
-            .first()
-        if report:
-            return report.receipts, report.expenditures
+        reports = self.cycle_reports(start, end)\
+            .order_by(Report.period_to.desc()).all()
+        the_ones = []
+        for k,g in groupby(reports, key=attrgetter('period_to')):
+            the_ones.append(sorted(list(g), key=attrgetter('date_filed'), reverse=True)[0])
+        receipts = sum(r.receipts for r in the_ones if r.receipts)
+        expenditures = sum(r.expenditures for r in the_ones if r.expenditures)
+        if receipts or expenditures:
+            return receipts, expenditures
         else:
             return 0, 0
 
